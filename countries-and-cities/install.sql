@@ -48,8 +48,8 @@ CREATE TABLE countries
   country_code  VARCHAR(2)    NOT NULL,
   name          VARCHAR(100)  NOT NULL,
   official_name VARCHAR(200),
-  latitude      NUMBER,
-  longitude     NUMBER,
+  latitude      NUMBER(8,5),
+  longitude     NUMBER(8,5),
   population    INTEGER,
   area_sq_km    INTEGER,
   timezone      VARCHAR(40),
@@ -71,11 +71,11 @@ ALTER TABLE countries ADD
 
 CREATE TABLE cities
 (
-  city_id       VARCHAR(3)    NOT NULL,
+  city_id       INTEGER       NOT NULL,
   name          VARCHAR(100)  NOT NULL,
   official_name VARCHAR(200),
-  latitude      NUMBER,
-  longitude     NUMBER,
+  latitude      NUMBER(8,5),
+  longitude     NUMBER(8,5),
   population    INTEGER,
   is_capital    CHAR(1)       NOT NULL,
   timezone      VARCHAR(40),
