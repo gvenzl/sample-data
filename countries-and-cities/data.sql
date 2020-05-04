@@ -401,7 +401,6 @@ INSERT INTO currencies (currency_id, name, country_id) VALUES ('CUC', 'Peso Conv
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('CZK', 'Czech Koruna', 'CZE');
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('DKK', 'Danish Krone', 'DNK');
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('DJF', 'Djibouti Franc', 'DJI');
-INSERT INTO currencies (currency_id, name, country_id) VALUES ('DJF', 'Djibouti Franc', 'DJI');
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('DOP', 'Dominican Peso', 'DOM');
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('EGP', 'Egyptian Pound', 'EGY');
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('SVC', 'El Salvador Colón', 'SLV');
