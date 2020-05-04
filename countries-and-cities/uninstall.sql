@@ -1,8 +1,8 @@
 /*
  * Since: March, 2020
  * Author: gvenzl
- * Name: install.sql
- * Description: DDL and data script
+ * Name: uninstall.sql
+ * Description: Uninstall (drop tables) script
  *
  * Copyright 2020 Gerald Venzl
  *
