@@ -98,19 +98,17 @@ ALTER TABLE cities ADD
 
 CREATE TABLE currencies
 (
-  currency_id    VARCHAR(3)    NOT NULL,
-  name           VARCHAR(50)   NOT NULL,
-  official_name VARCHAR(200),
-  country_id     VARCHAR(3)
+  currency_id       VARCHAR(3)    NOT NULL,
+  name              VARCHAR(50)   NOT NULL,
+  official_name     VARCHAR(200),
+  currency_symbol   VARCHAR2(1)
 );
 
 CREATE UNIQUE INDEX currencies_pk ON currencies (currency_id);
-CREATE INDEX currencies_fk_idx001 ON currencies (country_id);
 
 ALTER TABLE	currencies ADD
 (
-  CONSTRAINT currencies_pk PRIMARY KEY (currency_id),
-  CONSTRAINT currencies_countries_fk001 FOREIGN KEY (country_id) REFERENCES countries (country_id)
+  CONSTRAINT currencies_pk PRIMARY KEY (currency_id)
 );
 
 /*********************************************/
