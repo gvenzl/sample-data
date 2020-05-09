@@ -95,6 +95,7 @@ INSERT INTO countries (country_id, country_code, name, official_name, latitude, 
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('ETH', 'ET', 'Ethiopia', 'Federal Democratic Republic of Ethiopia', 9, 39.5, 108386000, 1104300, 'Africa/Addis_Ababa', 'AF');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('FIN', 'FI', 'Finland', 'Republic of Finland', 64, 26, 5537000, 338145, 'Europe/Helsinki', 'EU');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('FJI', 'FJ', 'Fiji', 'Republic of Fiji', -18, 178, 926000, 18274, 'Pacific/Fiji', 'OC');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('FSM', 'FM', 'Micronesia', 'Federated States of Micronesia', 6.91666, 158.18333, 104000, 702, null, 'OC');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('FRA', 'FR', 'France', 'Republic of France', 46, 2, 67364000, 643801, 'Europe/Paris', 'EU');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('GAB', 'GA', 'Gabon', 'Gabonese Republic', -1, 11.75, 2119000, 267667, 'Africa/Libreville', 'AF');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('GBR','GB','United Kingdom','United Kingdom of Great Britain and Northern Ireland',54.75844,-2.69531,62348447,'Europe/London','EU');
@@ -129,7 +130,7 @@ INSERT INTO countries (country_id, country_code, name, official_name, latitude, 
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('KIR', 'KI', 'Kiribati', 'Republic of Kiribati', 1.421, 172.984, 109000, 811, null, 'OC');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('COM', 'KM', 'Comoros', 'Union of the Comoros', -12.23333, 44.44553, 821000, 2235, 'Indian/Comoro', 'AF');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('KNA','KN','Saint Kitts and Nevis','Federation of Saint Kitts and Nevis',17.33333,-62.75,51134,'America/St_Kitts','NA');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PRK','KP','North Korea','Democratic People’s Republic of Korea',40,127,22912177,'Asia/Pyongyang','AS');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PRK', 'KP', 'North Korea', 'Democratic People’s Republic of Korea', 40, 127, 25381000, 120538, 'Asia/Pyongyang', 'AS');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('KOR','KR','South Korea','Republic of Korea',36.5,127.75,48422644,'Asia/Seoul','AS');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('KWT', 'KW', 'Kuwait', 'State of Kuwait', 29.5, 47.75, 4622000, 17818, 'Asia/Kuwait', 'AS');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('KAZ', 'KZ', 'Kazakhstan', 'Republic of Kazakhstan', 48, 68, 18745000, 2724900, null, 'AS');
@@ -144,39 +145,39 @@ INSERT INTO countries (country_id, country_code, name, official_name, latitude, 
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('LUX', 'LU', 'Luxembourg', 'Grand Duchy of Luxembourg', 49.75, 6.16667, 606000, 2586, 'Europe/Luxembourg', 'EU');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('LVA', 'LV', 'Latvia', 'Republic of Latvia', 57, 25, 1924000, 64589, 'Europe/Riga', 'EU');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('LBY', 'LY', 'Libya', 'State of Libya', 28, 17, 6755000, 1759540, 'Africa/Tripoli', 'AF');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MAR','MA','Morocco','Kingdom of Morocco',32,-6,33848242,'Africa/Casablanca','AF');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MCO','MC','Monaco','Principality of Monaco',43.73141,7.41903,32965,'Europe/Monaco','EU');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MDA','MD','Moldova, Republic of','Republic of Moldova',47.25,28.58333,4324000,'Europe/Chisinau','EU');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MNE','ME','Montenegro','Montenegro',42.75,19.25,666730,'Europe/Podgorica','EU');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MAR', 'MA', 'Morocco', 'Kingdom of Morocco', 32, -6, 34314000, 446550, 'Africa/Casablanca', 'AF');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MCO', 'MC', 'Monaco', 'Principality of Monaco', 43.73141, 7.41903, 38000, 2, 'Europe/Monaco', 'EU');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MDA', 'MD', 'Moldova', 'Republic of Moldova', 47.25, 28.58333, 3438000, 33851, 'Europe/Chisinau', 'EU');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MNE', 'ME', 'Montenegro', 'Montenegro', 42.75, 19.25, 614000, 13812, 'Europe/Podgorica', 'EU');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MDG', 'MG', 'Madagascar', 'Republic of Madagascar', -20, 47, 25684000, 587041, 'Indian/Antananarivo', 'AF');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MHL', 'MH', 'Marshall Islands', 'Republic of the Marshall Islands', 7.08971, 171.38027, 76000, 181, 'Pacific/Majuro', 'OC');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MKD','MK','Macedonia, the Former Yugoslav Republic of','North Macedonia',41.66667,21.75,2062294,'Europe/Skopje','EU');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MKD', 'MK', 'North Macedonia', 'Republic of North Macedonia', 41.66667, 21.75, 2119000, 25713, 'Europe/Skopje', 'EU');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MLI', 'ML', 'Mali', 'Republic of Mali', 18, -2, 18430000, 1240192, 'Africa/Bamako', 'AF');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MMR','MM','Myanmar','Union of Burma',21,96,53414374,'Asia/Yangon','AS');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MNG','MN','Mongolia','Mongolia',46,105,3086918,null,'AS');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MMR', 'MM', 'Myanmar', 'Republic of the Union of Myanmar', 21, 96, 55623000, 676578, 'Asia/Yangon', 'AS');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MNG', 'MN', 'Mongolia', 'Mongolia', 46, 105, 3103000, 1564116, null, 'AS');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MRT', 'MR', 'Mauritania', 'Islamic Republic of Mauritania', 20.25, -10.5, 3840000, 1030700, 'Africa/Nouakchott', 'AF');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MLT', 'MT', 'Malta', 'Republic of Malta', 35.91667, 14.43333, 449000, 316, 'Europe/Malta', 'EU');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MUS','MU','Mauritius','Republic of Mauritius',-20.3,57.58333,1294104,'Indian/Mauritius','AF');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MUS', 'MU', 'Mauritius', 'Republic of Mauritius', -20.3, 57.58333, 1364000, 2040, 'Indian/Mauritius', 'AF');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MDV', 'MV', 'Maldives', 'Republic of Maldives', 3.2, 73, 392000, 298, 'Indian/Maldives', 'AS');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MWI' ,'MW', 'Malawi', 'Republic of Malawi', -13.5, 34, 19843000, 118484, 'Africa/Blantyre', 'AF');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MEX','MX','Mexico','Mexico',23,-102,112468855,null,'NA');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MEX', 'MX', 'Mexico', 'United Mexican States', 23, -102, 125959000, 1964375, null, 'NA');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MYS', 'MY', 'Malaysia', 'Malaysia', 2.5, 112.5, 31810000, 329847, null, 'AS');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MOZ','MZ','Mozambique','Republic of Mozambique',-18.25,35,22061451,'Africa/Maputo','AF');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NAM','NA','Namibia','Republic of Namibia',-22,17,2128471,'Africa/Windhoek','AF');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NER','NE','Niger','Republic of Niger',18,9,15878271,'Africa/Niamey','AF');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NGA','NG','Nigeria','Federal Republic of Nigeria',10,8,154000000,'Africa/Lagos','AF');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NIC','NI','Nicaragua','Republic of Nicaragua',13,-85,5995928,'America/Managua','NA');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NLD','NL','Netherlands','Kingdom of the Netherlands',52.25,5.75,16645000,'Europe/Amsterdam','EU');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NOR','NO','Norway','Kingdom of Norway',62,10,5009150,'Europe/Oslo','EU');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NPL','NP','Nepal','Federal Democratic Republic of Nepal',28,84,28951852,'Asia/Kathmandu','AS');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NRU','NR','Nauru','Nauru',-0.517,166.933,10065,'Pacific/Nauru','OC');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NZL','NZ','New Zealand','New Zealand',-42,174,4252277,null,'OC');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('OMN','OM','Oman','Sultanate of Oman',21,57,2967717,'Asia/Muscat','AS');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('MOZ', 'MZ', 'Mozambique', 'Republic of Mozambique', -18.25, 35, 27234000, 799380, 'Africa/Maputo', 'AF');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NAM', 'NA', 'Namibia', 'Republic of Namibia', -22, 17, 2533000, 824292, 'Africa/Windhoek', 'AF');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NER', 'NE', 'Niger', 'Republic of Niger', 18, 9, 19866000, 1267000, 'Africa/Niamey', 'AF');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NGA', 'NG', 'Nigeria', 'Federal Republic of Nigeria', 10, 8, 203453000, 923768, 'Africa/Lagos', 'AF');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NIC', 'NI', 'Nicaragua', 'Republic of Nicaragua', 13, -85, 6085000, 130370, 'America/Managua', 'NA');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NLD', 'NL', 'Netherlands', 'Kingdom of Netherlands', 52.25, 5.75, 17151000, 41543, 'Europe/Amsterdam', 'EU');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NOR', 'NO', 'Norway', 'Kingdom of Norway', 62, 10, 5372000, 323802, 'Europe/Oslo', 'EU');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NPL', 'NP', 'Nepal', 'Federal Democratic Republic of Nepal', 28, 84, 29718000, 147181, 'Asia/Kathmandu', 'AS');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NRU', 'NR', 'Nauru', 'Republic of Nauru', -0.517, 166.933, 10000, 21, 'Pacific/Nauru', 'OC');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('NZL', 'NZ', 'New Zealand', 'New Zealand', -42, 174, 4546000, 268838, null, 'OC');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('OMN', 'OM', 'Oman', 'Sultanate of Oman', 21, 57, 3494000, 309500, 'Asia/Muscat', 'AS');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PAN','PA','Panama','Republic of Panama',9,-80,3410676,'America/Panama','NA');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PER','PE','Peru','Republic of Peru',-10,-75.25,29907003,'America/Lima','SA');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PNG','PG','Papua New Guinea','Independent State of Papua New Guinea',-6,147,6064515,null,'OC');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PHL','PH','Philippines','Republic of the Philippines',13,122,99900177,'Asia/Manila','AS');
-INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PAK','PK','Pakistan','Islamic Republic of Pakistan',30,70,184404791,'Asia/Karachi','AS');
+INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PAK', 'PK', 'Pakistan', 'Islamic Republic of Pakistan', 30, 70, 207863000, 796095, 'Asia/Karachi', 'AS');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('POL','PL','Poland','Republic of Poland',52,20,38500000,'Europe/Warsaw','EU');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PRT','PT','Portugal','Portuguese Republic',39.6945,-8.13057,10676000,null,'EU');
 INSERT INTO countries (country_id, country_code, name, official_name, latitude, longitude, population, area_sq_km, timezone, region_id) VALUES ('PRY','PY','Paraguay','Republic of Paraguay',-23.33333,-58,6375830,'America/Asuncion','SA');
@@ -244,7 +245,7 @@ INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Algiers',
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Pago Pago', 49000, 'Y', 'WSM');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Andorra la Vella', 23000, 'Y', 'AND');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Luanda', 7774000, 'Y', 'AGO');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Saint John’s', 21000, 'Y', 'ATG');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('Saint John''s', 'Saint John’s', 21000, 'Y', 'ATG');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Buenos Aires', 14967000, 'Y', 'ARG');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Yerevan', 1080000, 'Y', 'ARM');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Canberra', 423000, 'Y', 'AUS');
@@ -257,7 +258,7 @@ INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Bridgetow
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Minsk', 2005000, 'Y', 'BLR');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Brussels', 2050000, 'Y', 'BEL');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Belmopan', 23000, 'Y', 'BLZ');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Porto-Novo', 285000, 'Y', 'BEN');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('Porto Novo', 'Porto-Novo', 285000, 'Y', 'BEN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Thimphu', 203000, 'Y', 'BTN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Sucre', 278000, 'Y', 'BOL');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Sarajevo', 343000, 'Y', 'BIH');
@@ -265,14 +266,14 @@ INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Gaborone'
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Brasilia', 4470000, 'Y', 'BRA');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Bandar Seri Begawan', 241000, 'Y', 'BRN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Sofia', 1272000, 'Y', 'BGR');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Ouagadougou', 2531000, ''Y', BFA');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Ouagadougou', 2531000, 'Y', 'BFA');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Bujumbura', 899000, 'Y', 'BDI');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Praia', 168000, 'Y', 'CPV');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Phnom Penh', 1952000, 'Y', 'KHM');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Yaoundé', 1952000, 'Y', 'CMR');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('Yaounde', 'Yaoundé', 1952000, 'Y', 'CMR');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Ottawa', 1363000, 'Y', 'CAN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Bangui', 851000, 'Y', 'CAF');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('N’Djamena', 1323000, 'Y', 'TCD');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('N''Djamena', 'N’Djamena', 1323000, 'Y', 'TCD');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Santiago', 6680000, 'Y', 'CHL');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Beijing', 19618000, 'Y', 'CHN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Taipei', 2706000, 'Y', 'TWN');
@@ -280,7 +281,7 @@ INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Bogota', 
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Moroni', 62000, 'Y', 'COM');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Brazzaville', 2230000, 'Y', 'COG');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Kinshasa', 13171000, 'Y', 'COD');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('San José', 1358000, 'Y', 'CRI');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('San Jose', 'San José', 1358000, 'Y', 'CRI');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Yamoussoukro', 231000, 'Y', 'CIV');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Zagreb', 686000, 'Y', 'HRV');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Havana', 2136000, 'Y', 'CUB');
@@ -313,10 +314,10 @@ INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Guatemala
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Conakry', 1843000, 'Y', 'GIN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Bissau', 558000, 'Y', 'GNB');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Georgetown', 110000, 'Y', 'GUY');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Port-au-Prince', 2637000, 'Y', 'HTI');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('Port au Prince', 'Port-au-Prince', 2637000, 'Y', 'HTI');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Tegucigalpa', 1363000, 'Y', 'HND');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Budapest', 1759000, 'Y', 'HUN');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Reykjavík', 216000, 'Y', 'ISL');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('Reykjavik', 'Reykjavík', 216000, 'Y', 'ISL');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('New Delhi', 28514000, 'Y', 'IND');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Jakarta', 10517000, 'Y', 'IDN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Tehran', 8896000, 'Y', 'IRN');
@@ -327,7 +328,7 @@ INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Rome', 42
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Kingston', 589000, 'Y', 'JAM');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Tokyo', 37468000, 'Y', 'JPN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Amman', 2065000, 'Y', 'JOR');
-INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Nur-Sultan', 1068000, 'Y', 'KAZ');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('Nur Sultan', 'Nur-Sultan', 1068000, 'Y', 'KAZ');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Nairobi', 4386000, 'Y', 'KEN');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Tarawa', 64000, 'Y', 'KIR');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Prishtina', 207062, 'Y', 'XKX');
@@ -350,6 +351,30 @@ INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Bamako', 
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Valletta', 213000, 'Y', 'MLT');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Majuro', 31000, 'Y', 'MHL');
 INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Nouakchott', 1205000, 'Y', 'MRT');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Port Louis', 149000, 'Y', 'MUS');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Mexico City', 21581000, 'Y', 'MEX');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Palikir', 7000, 'Y', 'FSM');
+INSERT INTO cities (name, official_name, population, is_capital, country_id) VALUES ('Chisinau', 'Chişinău', 510000, 'Y', 'MDA');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Monaco', 38000, 'Y', 'MCO');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Ulaanbaatar', 1520000, 'Y', 'MNG');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Podgorica', 177000, 'Y', 'MNE');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Rabat', 1847000, 'Y', 'MAR');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Maputo', 1102000, 'Y', 'MOZ');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Nay Pyi Taw', 1176000, 'Y', 'MMR');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Windhoek', 404000, 'Y', 'NAM');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Yaren', 1000, 'Y', 'NRU');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Kathmandu', 1330000, 'Y', 'NPL');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Amsterdam', 1132000, 'Y', 'NLD');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Wellington', 411000, 'Y', 'NZL');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Managua', 1048000, 'Y', 'NIC');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Niamey', 1214000, 'Y', 'NER');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Abuja', 2919000, 'Y', 'NGA');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Pyongyang', 3038000, 'Y', 'PRK');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Skopje', 584000, 'Y', 'MKD');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Oslo', 1012000, 'Y', 'NOR');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Muscat', 1447000, 'Y', 'OMN');
+INSERT INTO cities (name, population, is_capital, country_id) VALUES ('Islamabad', 1061000, 'Y', 'PAK');
+
 
 
 COMMIT;
@@ -443,8 +468,22 @@ INSERT INTO currencies (currency_id, name, country_id) VALUES ('MWK', 'Malawian 
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('MYR', 'Malaysian Ringgit', 'MYS');
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('MVR', 'Rufiyaa', 'MDV');
 INSERT INTO currencies (currency_id, name, country_id) VALUES ('MRU', 'Ouguiya', 'MRT');
-
-
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('MUR', 'Mauritius Rupee', 'MUS');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('MXN', 'Mexican Peso', 'MEX');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('MDL', 'Moldovan Leu', 'MDA');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('MNT', 'Tugrik', 'MNG');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('MAD', 'Moroccan Dirham', 'MAR');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('MZN', 'Mozambique Metical', 'MOZ');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('MMK', 'Kyat', 'MMR');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('NAD', 'Namibian Dollar', 'NAM');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('NPR', 'Nepalese Rupee', 'NPL');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('NZD', 'New Zealand Dollar', 'NZL');
+INSERT INTO currencies (currency_id, name, official_name, country_id) VALUES ('NIO', 'Cordoba Oro', 'Córdoba Oro', 'NIC');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('KPW', 'North Korean Won', 'PRK');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('MKD', 'Denar', 'MKD');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('NOK', 'Norwegian Krone', 'NOR');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('OMR', 'Rial Omani', 'OMN');
+INSERT INTO currencies (currency_id, name, country_id) VALUES ('PKR', 'Pakistan Rupee', 'PAK');
 
 
 
@@ -497,7 +536,12 @@ INSERT INTO currencies_countries(currency_id, country_id) VALUES ('EUR', 'LUX');
 INSERT INTO currencies_countries(currency_id, country_id) VALUES ('XOF', 'MLI');
 INSERT INTO currencies_countries(currency_id, country_id) VALUES ('EUR', 'MLT');
 INSERT INTO currencies_countries(currency_id, country_id) VALUES ('USD', 'MHL');
-
+INSERT INTO currencies_countries(currency_id, country_id) VALUES ('USD', 'FSM');
+INSERT INTO currencies_countries(currency_id, country_id) VALUES ('EUR', 'MCO');
+INSERT INTO currencies_countries(currency_id, country_id) VALUES ('EUR', 'MNE');
+INSERT INTO currencies_countries(currency_id, country_id) VALUES ('AUD', 'NRU');
+INSERT INTO currencies_countries(currency_id, country_id) VALUES ('EUR', 'NLD');
+INSERT INTO currencies_countries(currency_id, country_id) VALUES ('XOF', 'NER');
 
 
 COMMIT;
