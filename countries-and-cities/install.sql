@@ -100,6 +100,7 @@ CREATE TABLE currencies
 (
   currency_id    VARCHAR(3)    NOT NULL,
   name           VARCHAR(50)   NOT NULL,
+  official_name VARCHAR(200),
   country_id     VARCHAR(3)
 );
 
