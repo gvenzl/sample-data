@@ -101,7 +101,7 @@ CREATE TABLE currencies
   currency_id       VARCHAR(3)    NOT NULL,
   name              VARCHAR(50)   NOT NULL,
   official_name     VARCHAR(200),
-  currency_symbol   VARCHAR2(1)
+  symbol            VARCHAR(6)    NOT NULL
 );
 
 CREATE UNIQUE INDEX currencies_pk ON currencies (currency_id);
