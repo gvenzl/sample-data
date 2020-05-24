@@ -5,7 +5,7 @@ The data here is provided with the generous help of my gorgeous wife Federica Ve
 
 | Folder            | Data set        | Data Sources              |
 | ----------------- | --------------- | ------------------------- |
-| [countries-and-cities](./countries-and-cities) | List of all countries in the world, their capitals and currencies. | <ul><li>[GeoNames](https://www.geonames.org/)</li><li>National Geographic Atlas of the World, 11th Edition, October 2019 (ISBN-13: 978-1426220586)</li></ul> |
+| [countries-and-cities](./countries-and-cities) | List of all countries in the world, their capitals and currencies. | <ul><li>[GeoNames.org](https://www.geonames.org/)</li><li>National Geographic Atlas of the World, 11th Edition, October 2019 (ISBN-13: 978-1426220586)</li></ul> |
 | [departments-and-employees](./departments-and-employees) | A fictional data set about a company's departments and employees | None |
 
 ## License
