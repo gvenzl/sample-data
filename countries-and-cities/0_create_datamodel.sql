@@ -1,7 +1,7 @@
 /*
  * Since: March, 2020
  * Author: gvenzl
- * Name: install.sql
+ * Name: 0_create_datamodel.sql
  * Description: DDL setup script
  *
  * Copyright 2020 Gerald Venzl
