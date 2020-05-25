@@ -1,7 +1,7 @@
 /*
  * Since: March, 2020
  * Author: gvenzl
- * Name: uninstall.sql
+ * Name: 9_uninstall.sql
  * Description: Uninstall (drop tables) script
  *
  * Copyright 2020 Gerald Venzl
