@@ -28,7 +28,8 @@ CREATE TABLE departments
   department_id   SMALLINT      NOT NULL,
   name            VARCHAR(10)   NOT NULL,
   location        VARCHAR(8)    NOT NULL,
-  CONSTRAINT departments_pk PRIMARY KEY (department_id)
+  CONSTRAINT departments_pk
+    PRIMARY KEY (department_id)
 );
 
 INSERT INTO departments (department_id, name, location) VALUES (1, 'Operations', 'Vienna');
