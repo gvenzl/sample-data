@@ -24,7 +24,7 @@ CREATE TABLE regions
 (
   region_id     VARCHAR(2)   NOT NULL,
   name          VARCHAR(13)  NOT NULL,
-  CONSTRAINT region_pk
+  CONSTRAINT regions_pk
     PRIMARY KEY (region_id)
 );
 
