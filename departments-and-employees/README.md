@@ -57,20 +57,19 @@ Table: employees
 | --------- | ------------|
 | [departments.csv](departments.csv) | Comma separated file with departments data |
 | [employees.csv](employees.csv) | Comma separated file with employees data |
-| [install.mysql.sql](install.mysql.sql) | Setup file for MySQL |
 | [install.oracle.sql](install.oracle.sql) | Setup file for Oracle database |
-| [install.sql](install.sql) | Setup file for PostgreSQL, SQL Server, Db2 |
+| [install.sql](install.sql) | Setup file for PostgreSQL, MySQL, SQL Server, Db2 |
 | [uninstall.sql](uninstall.sql) | Uninstall file for all databases |
 
 ## Database install instructions
 
 Connect to your database of choice and execute the `install.sql` file.  
 
-**Note**: there is a separate file for **MySQL** `install.mysql.sql` and for **Oracle** `install.oracle.sql`
+**Note**: there is a separate file for **Oracle** `install.oracle.sql`
 
 ### MySQL
 ```bash
-mysql> source install.mysql.sql
+mysql> source install.sql
 ```
 
 ### Postgres
