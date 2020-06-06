@@ -1,4 +1,5 @@
 /*
+ * Encoding: UTF-8
  * Since: March, 2020
  * Author: gvenzl
  * Name: 0_create_datamodel.sql
@@ -21,8 +22,10 @@
 
 CREATE TABLE regions
 (
-  region_id     VARCHAR(2)   NOT NULL PRIMARY KEY,
-  name          VARCHAR(13)  NOT NULL
+  region_id     VARCHAR(2)   NOT NULL,
+  name          VARCHAR(13)  NOT NULL,
+  CONSTRAINT region_pk
+    PRIMARY KEY (region_id)
 );
 
 /*********************************************/
@@ -31,21 +34,23 @@ CREATE TABLE regions
 
 CREATE TABLE countries
 (
-  country_id    VARCHAR(3)    NOT NULL PRIMARY KEY,
-  country_code  VARCHAR(2)    NOT NULL,
-  name          VARCHAR(100)  NOT NULL,
+  country_id    VARCHAR(3)     NOT NULL,
+  country_code  VARCHAR(2)     NOT NULL,
+  name          VARCHAR(100)   NOT NULL,
   official_name VARCHAR(200),
+  population    NUMERIC(10),
+  area_sq_km    NUMERIC(10,2),
   latitude      NUMERIC(8,5),
   longitude     NUMERIC(8,5),
-  population    NUMERIC(10),
-  area_sq_km    INTEGER,
   timezone      VARCHAR(40),
-  region_id     VARCHAR(2)    NOT NULL,
-  
-  CONSTRAINT countries_regions_fk001 FOREIGN KEY (region_id) REFERENCES regions (region_id)
+  region_id     VARCHAR(2)     NOT NULL,
+  CONSTRAINT countries_pk
+    PRIMARY KEY (country_id),
+  CONSTRAINT countries_regions_fk001
+    FOREIGN KEY (region_id) REFERENCES regions (region_id)
 );
 
-CREATE INDEX countries_fk_idx001 ON countries (region_id);
+CREATE INDEX countries_regions_fk001 ON countries (region_id);
 
 /*********************************************/
 /***************** CITIES ********************/
@@ -53,21 +58,24 @@ CREATE INDEX countries_fk_idx001 ON countries (region_id);
 
 CREATE TABLE cities
 (
-  city_id       VARCHAR(7)    NOT NULL PRIMARY KEY,
+  city_id       VARCHAR(7)    NOT NULL,
   name          VARCHAR(100)  NOT NULL,
   official_name VARCHAR(200),
-  latitude      NUMERIC(8,5),
-  longitude     NUMERIC(8,5),
   population    NUMERIC(8),
   is_capital    CHAR(1)       NOT NULL,
+  latitude      NUMERIC(8,5),
+  longitude     NUMERIC(8,5),
   timezone      VARCHAR(40),
   country_id    VARCHAR(3)    NOT NULL,
-  
-  CONSTRAINT cities_countries_fk001 FOREIGN KEY (country_id) REFERENCES countries (country_id),
-  CONSTRAINT cities_is_capital_Y_N_check001 CHECK (is_capital IN ('Y','N'))
+  CONSTRAINT cities_pk
+    PRIMARY KEY (city_id),
+  CONSTRAINT cities_countries_fk001
+    FOREIGN KEY (country_id) REFERENCES countries (country_id),
+  CONSTRAINT cities_is_capital_Y_N_check001
+    CHECK (is_capital IN ('Y','N'))
 );
 
-CREATE INDEX cities_fk_idx001 ON cities (country_id);
+CREATE INDEX cities_countries_fk001 ON cities (country_id);
 
 /*********************************************/
 /***************** CURRENCIES ****************/
@@ -75,10 +83,12 @@ CREATE INDEX cities_fk_idx001 ON cities (country_id);
 
 CREATE TABLE currencies
 (
-  currency_id       VARCHAR(3)    NOT NULL PRIMARY KEY,
+  currency_id       VARCHAR(3)    NOT NULL,
   name              VARCHAR(50)   NOT NULL,
   official_name     VARCHAR(200),
-  symbol            VARCHAR(6)    NOT NULL
+  symbol            VARCHAR(6)    NOT NULL,
+  CONSTRAINT currencies_pk
+    PRIMARY KEY (currency_id)
 );
 
 /*********************************************/
@@ -89,8 +99,10 @@ CREATE TABLE currencies_countries
 (
   currency_id    VARCHAR(3)   NOT NULL,
   country_id     VARCHAR(3)   NOT NULL,
-  PRIMARY KEY (currency_id, country_id),
-  
-  CONSTRAINT currencies_countries_currencies_fk001 FOREIGN KEY (currency_id) REFERENCES currencies (currency_id),
-  CONSTRAINT currencies_countries_countries_fk002  FOREIGN KEY (country_id)  REFERENCES countries(country_id)
+  CONSTRAINT currencies_countries_pk
+    PRIMARY KEY (currency_id, country_id),
+  CONSTRAINT currencies_countries_currencies_fk001
+    FOREIGN KEY (currency_id) REFERENCES currencies (currency_id),
+  CONSTRAINT currencies_countries_countries_fk002
+    FOREIGN KEY (country_id)  REFERENCES countries(country_id)
 );
