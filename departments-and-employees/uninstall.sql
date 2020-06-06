@@ -1,4 +1,5 @@
 /*
+ * Encoding: UTF-8
  * Since: May, 2020
  * Author: gvenzl
  * Name: uninstall.sql
