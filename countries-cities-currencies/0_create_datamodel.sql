@@ -62,7 +62,7 @@ CREATE TABLE cities
   name          VARCHAR(100)  NOT NULL,
   official_name VARCHAR(200),
   population    NUMERIC(8),
-  is_capital    CHAR(1)       NOT NULL,
+  is_capital    CHAR(1)       NOT NULL DEFAULT 'N',
   latitude      NUMERIC(8,5),
   longitude     NUMERIC(8,5),
   timezone      VARCHAR(40),
