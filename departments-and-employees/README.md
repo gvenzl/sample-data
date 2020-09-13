@@ -97,4 +97,33 @@ $ db2 -tvmf install.sql
 
 ## Database uninstall instructions
 
-Connect to your database of choice and execute the `uninstall.sql` file. Follow the same approach as described in the **Database install instructions**.
+Connect to your database of choice and execute the `uninstall.sql` file.  
+
+### MySQL
+```bash
+mysql> source uninstall.sql
+```
+
+### Postgres
+```bash
+db=> \i uninstall.sql
+```
+
+### Oracle Database
+```bash
+SQL> @uninstall.sql
+```
+
+### SQL Server
+```bash
+1> :r uninstall.sql
+2> go
+```
+
+### Db2
+```bash
+$ db2 -tvmf uninstall.sql
+```
+
+## Data sources
+This data set is fictional and does not have any data sources.
