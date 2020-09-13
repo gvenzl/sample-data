@@ -2,7 +2,7 @@
  * Encoding: UTF-8
  * Since: March, 2020
  * Author: gvenzl
- * Name: 9_uninstall.sql
+ * Name: uninstall.sql
  * Description: Uninstall (drop tables) script
  *
  * Copyright 2020 Gerald Venzl
