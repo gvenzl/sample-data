@@ -2,6 +2,8 @@
 
 This data set contains ***fictional*** departments and employees data. It can be used for educational purposes and to demonstrate basic concepts of relational databases, such as basic `SELECT` statements, joins, `1:N` relationships, hierarchical data structures, etc.
 
+**All files are UTF-8 encoded.**
+
 ## Sample output
 
 ```sql
