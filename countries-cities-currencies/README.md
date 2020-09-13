@@ -90,7 +90,63 @@ Table: currencies_countries
 
 ## Database install instructions
 
+Connect to your database of choice and execute the `install.sql` file.  
+
+### MySQL
+```bash
+mysql> source install.sql
+```
+
+### Postgres
+```bash
+db=> \i install.sql
+```
+
+### Oracle Database
+```bash
+SQL> @install.sql
+```
+
+### SQL Server
+```bash
+1> :r install.sql
+2> go
+```
+
+### Db2
+```bash
+$ db2 -tvmf install.sql
+```
+
 ## Database uninstall instructions
+
+Connect to your database of choice and execute the `uninstall.sql` file.  
+
+### MySQL
+```bash
+mysql> source uninstall.sql
+```
+
+### Postgres
+```bash
+db=> \i uninstall.sql
+```
+
+### Oracle Database
+```bash
+SQL> @uninstall.sql
+```
+
+### SQL Server
+```bash
+1> :r uninstall.sql
+2> go
+```
+
+### Db2
+```bash
+$ db2 -tvmf uninstall.sql
+```
 
 # Acknowledgments
 ***The data here is provided with the generous help of my gorgeous wife Federica Venzl.***
