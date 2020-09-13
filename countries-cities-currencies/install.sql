@@ -72,7 +72,7 @@ CREATE TABLE cities
   name          VARCHAR(100)  NOT NULL,
   official_name VARCHAR(200),
   population    NUMERIC(8),
-  is_capital    CHAR(1)       NOT NULL DEFAULT 'N',
+  is_capital    CHAR(1)       DEFAULT 'N' NOT NULL,
   latitude      NUMERIC(8,5),
   longitude     NUMERIC(8,5),
   timezone      VARCHAR(40),
@@ -96,7 +96,7 @@ CREATE TABLE currencies
   currency_id       VARCHAR(3)    NOT NULL,
   name              VARCHAR(50)   NOT NULL,
   official_name     VARCHAR(200),
-  symbol            VARCHAR(6)    NOT NULL,
+  symbol            VARCHAR(18)   NOT NULL,
   CONSTRAINT currencies_pk
     PRIMARY KEY (currency_id)
 );
@@ -914,13 +914,16 @@ COMMIT;
 
 SELECT 'Verfification:' as "Verification" FROM regions WHERE region_id = 'EU';
 
-SELECT 'regions:' as "Table", 7 as "provided", count(1) as "actual" from regions
+SELECT 'regions' as "Table", 7 as "provided", count(1) as "actual" from regions
 UNION ALL
-SELECT 'countries:' as "Table", 196 as "provided", count(1) as "actual" from countries
+SELECT 'countries' as "Table", 196 as "provided", count(1) as "actual" from countries
 UNION ALL
-SELECT 'cities:' as "Table", 201 as "provided", count(1) as "actual" from cities
+SELECT 'cities' as "Table", 201 as "provided", count(1) as "actual" from cities
 UNION ALL
-SELECT 'currencies:' as "Table", 146 as "provided", count(1) as "actual" from currencies;
+SELECT 'currencies' as "Table", 146 as "provided", count(1) as "actual" from currencies;
 
 SELECT 'The installation is finished, please check the verification output above!' as "Thank you!"
-   FROM regions WHERE region_id = 'EU';
+   FROM regions WHERE region_id = 'EU'
+UNION ALL
+SELECT 'If the ''provided'' and ''actual'' row count match, the installation was successful.' as "Thank you!"
+   FROM regions WHERE region_id = 'OC';
