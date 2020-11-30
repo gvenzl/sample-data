@@ -93,6 +93,9 @@ Table: currencies_countries
 Connect to your database of choice and execute the `install.sql` file.  
 
 ### MySQL
+Please make sure that your connections is using the `utf8mb4` characterset.  
+You can do so by passing on the `--default-character-set=utf8mb4` option to the command line, e.g.: `mysql -u <your user> -p<your password> -D <your database> --default-character-set=utf8mb4`
+
 ```bash
 mysql> source install.sql
 ```
