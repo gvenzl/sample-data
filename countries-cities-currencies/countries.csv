@@ -12,7 +12,7 @@ AUS,AU,Australia,Commonwealth of Australia,23470000,7741220,-25,135,,OC
 AZE,AZ,Azerbaijan,Republic of Azerbaijan,10047000,86600,40.5,47.5,Asia/Baku,AS
 BIH,BA,Bosnia and Herzegovina,,3850000,51197,44.25,17.83333,Europe/Sarajevo,EU
 BRB,BB,Barbados,,293000,430,13.16453,-59.55165,America/Barbados,NA
-BGD,BD,Bangladesh,,159453000,148460,24,90,Asia/Dhaka,AS
+BGD,BD,Bangladesh,People's Republic of Bangladesh,159453000,148460,24,90,Asia/Dhaka,AS
 BEL,BE,Belgium,Kingdom of Belgium,11571000,30528,50.75,4.5,Europe/Brussels,EU
 BFA,BF,Burkina Faso,,19743000,274200,12.5,-1.66667,Africa/Ouagadougou,AF
 BGR,BG,Bulgaria,Republic of Bulgaria,7058000,110879,42.66667,25.25,Europe/Sofia,EU
@@ -25,7 +25,7 @@ BRA,BR,Brazil,Federative Republic of Brazil,208847000,8515770,-10,-55,,SA
 BHS,BS,Bahamas,Commonwealth of The Bahamas,333000,13880,25.04082,-77.37122,America/Nassau,NA
 BTN,BT,Bhutan,Kingdom of Bhutan,766000,38394,27.5,90.5,Asia/Thimphu,AS
 BWA,BW,Botswana,Republic of Botswana,2249000,581730,-22,24,Africa/Gaborone,AF
-BLR,BY,Belarus,Republic of Belarus,9528000,270600,53,28,Europe/Minsk,EU
+BLR,BY,Belarus,Republic of Belarus,9528000,207600,53,28,Europe/Minsk,EU
 BLZ,BZ,Belize,,386000,22966,17.25,-88.75,America/Belize,NA
 CAN,CA,Canada,,35882000,9984670,60.10867,-113.64258,,NA
 COD,CD,Democratic Republic of the Congo,,85281000,2344858,-2.5,23.5,,AF
@@ -39,13 +39,13 @@ CHN,CN,China,People’s Republic of China,1384689000,9596960,35,105,,AS
 COL,CO,Colombia,Republic of Colombia,48169000,1138910,4,-73.25,America/Bogota,SA
 CRI,CR,Costa Rica,Republic of Costa Rica,4987000,51100,10,-84,America/Costa_Rica,NA
 CUB,CU,Cuba,Republic of Cuba,11116000,110860,22,-79.5,America/Havana,NA
-CPV,CV,Cape Verde,Republic of Cabo Verde,568000,4033,16,-24,Atlantic/Cape_Verde,AF
+CPV,CV,Cabo Verde,Republic of Cabo Verde,568000,4033,16,-24,Atlantic/Cape_Verde,AF
 CYP,CY,Cyprus,Republic of Cyprus,1237000,9251,35,33,,EU
-CZE,CZ,Czech Republic,Czechia,10686000,78867,49.75,15,Europe/Prague,EU
+CZE,CZ,Czechia,Czech Republic,10686000,78867,49.75,15,Europe/Prague,EU
 DEU,DE,Germany,Federal Republic of Germany,80458000,357022,51.5,10.5,,EU
 DJI,DJ,Djibouti,Republic of Djibouti,884000,23200,11.83333,42.5,Africa/Djibouti,AF
 DNK,DK,Denmark,Kingdom of Denmark,5810000,43094,56,10,Europe/Copenhagen,EU
-DMA,DM,Dominica,,74000,751,15.5,-61.33333,America/Dominica,NA
+DMA,DM,Dominica,Commonwealth of Dominica,74000,751,15.5,-61.33333,America/Dominica,NA
 DOM,DO,Dominican Republic,,10299000,48670,19,-70.66667,America/Santo_Domingo,NA
 DZA,DZ,Algeria,People’s Democratic Republic of Algeria,41657000,2381741,28,3,Africa/Algiers,AF
 ECU,EC,Ecuador,Republic of Ecuador,16291000,283561,-1.25,-78.25,,SA
@@ -57,7 +57,7 @@ ETH,ET,Ethiopia,Federal Democratic Republic of Ethiopia,108386000,1104300,9,39.5
 FIN,FI,Finland,Republic of Finland,5537000,338145,64,26,Europe/Helsinki,EU
 FJI,FJ,Fiji,Republic of Fiji,926000,18274,-18,178,Pacific/Fiji,OC
 FSM,FM,Micronesia,Federated States of Micronesia,104000,702,6.91666,158.18333,,OC
-FRA,FR,France,Republic of France,67364000,643801,46,2,Europe/Paris,EU
+FRA,FR,France,French Republic,67364000,643801,46,2,Europe/Paris,EU
 GAB,GA,Gabon,Gabonese Republic,2119000,267667,-1,11.75,Africa/Libreville,AF
 GBR,GB,United Kingdom,United Kingdom of Great Britain and Northern Ireland,65105000,243610,54.75844,-2.69531,Europe/London,EU
 GRD,GD,Grenada,,112000,344,12.11667,-61.66667,America/Grenada,NA
@@ -96,7 +96,7 @@ KOR,KR,South Korea,Republic of Korea,51418000,99720,36.5,127.75,Asia/Seoul,AS
 KWT,KW,Kuwait,State of Kuwait,4622000,17818,29.5,47.75,Asia/Kuwait,AS
 KAZ,KZ,Kazakhstan,Republic of Kazakhstan,18745000,2724900,48,68,,AS
 LAO,LA,Laos,Lao People’s Democratic Republic,7234000,236800,18,105,Asia/Vientiane,AS
-LBN,LB,Lebanon,,6100000,10400,33.83333,35.83333,Asia/Beirut,AS
+LBN,LB,Lebanon,Lebanese Republic,6100000,10400,33.83333,35.83333,Asia/Beirut,AS
 LCA,LC,Saint Lucia,,166000,616,13.88333,-60.96667,America/Castries,NA
 LIE,LI,Liechtenstein,Principality of Liechtenstein,39000,160,47.16667,9.53333,Europe/Vaduz,EU
 LKA,LK,Sri Lanka,Democratic Socialist Republic of Sri Lanka,22577000,65610,7.75,80.75,Asia/Colombo,AS
