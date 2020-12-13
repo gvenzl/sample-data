@@ -1,11 +1,9 @@
 # sample-data
 Collections of sample data.
 
-The data here is provided with the generous help of my gorgeous wife Federica Venzl.
-
 | Folder            | Data set        | Data Sources              |
 | ----------------- | --------------- | ------------------------- |
-| [countries-cities-currencies](./countries-cities-currencies) | List of the world's countries, capitals and currencies. | <ul><li>National Geographic Atlas of the World, 11th Edition, October 2019 (ISBN-13: 978-1426220586)</li><li>[GeoNames.org](https://www.geonames.org/)</li></ul> |
+| [countries-cities-currencies](./countries-cities-currencies) | List of the world's countries, capital cities and official currencies. | <ul><li>National Geographic Atlas of the World, 11th Edition, October 2019 (ISBN-13: 978-1426220586)</li><li>[GeoNames.org](https://www.geonames.org/)</li></ul> |
 | [departments-and-employees](./departments-and-employees) | A fictional data set about a company's departments and employees | None |
 
 ## License
