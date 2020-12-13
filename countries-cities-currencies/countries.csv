@@ -12,7 +12,7 @@ AUS,AU,Australia,Commonwealth of Australia,23470000,7741220,-25,135,,OC
 AZE,AZ,Azerbaijan,Republic of Azerbaijan,10047000,86600,40.5,47.5,Asia/Baku,AS
 BIH,BA,Bosnia and Herzegovina,,3850000,51197,44.25,17.83333,Europe/Sarajevo,EU
 BRB,BB,Barbados,,293000,430,13.16453,-59.55165,America/Barbados,NA
-BGD,BD,Bangladesh,People's Republic of Bangladesh,159453000,148460,24,90,Asia/Dhaka,AS
+BGD,BD,Bangladesh,People’s Republic of Bangladesh,159453000,148460,24,90,Asia/Dhaka,AS
 BEL,BE,Belgium,Kingdom of Belgium,11571000,30528,50.75,4.5,Europe/Brussels,EU
 BFA,BF,Burkina Faso,,19743000,274200,12.5,-1.66667,Africa/Ouagadougou,AF
 BGR,BG,Bulgaria,Republic of Bulgaria,7058000,110879,42.66667,25.25,Europe/Sofia,EU
@@ -35,7 +35,7 @@ CHE,CH,Switzerland,Swiss Confederation,8293000,41277,47.00016,8.01427,Europe/Zur
 CIV,CI,Cote d'Ivoire,Republic of Côte d’Ivoire,26261000,322463,8,-5.5,Africa/Abidjan,AF
 CHL,CL,Chile,Republic of Chile,17925000,756102,-30,-71,,SA
 CMR,CM,Cameroon,Republic of Cameroon,25641000,475440,6,12.5,Africa/Douala,AF
-CHN,CN,China,People’s Republic of China,1384689000,9596960,35,105,,AS
+CHN,CN,China,People's Republic of China,1384689000,9596960,35,105,,AS
 COL,CO,Colombia,Republic of Colombia,48169000,1138910,4,-73.25,America/Bogota,SA
 CRI,CR,Costa Rica,Republic of Costa Rica,4987000,51100,10,-84,America/Costa_Rica,NA
 CUB,CU,Cuba,Republic of Cuba,11116000,110860,22,-79.5,America/Havana,NA
@@ -91,11 +91,11 @@ KHM,KH,Cambodia,Kingdom of Cambodia,16450000,181035,13,105,Asia/Phnom_Penh,AS
 KIR,KI,Kiribati,Republic of Kiribati,109000,811,1.421,172.984,,OC
 COM,KM,Comoros,Union of the Comoros,821000,2235,-12.23333,44.44553,Indian/Comoro,AF
 KNA,KN,Saint Kitts and Nevis,Federation of Saint Kitts and Nevis,53000,261,17.33333,-62.75,America/Basseterre,NA
-PRK,KP,North Korea,Democratic People’s Republic of Korea,25381000,120538,40,127,Asia/Pyongyang,AS
+PRK,KP,North Korea,Democratic People's Republic of Korea,25381000,120538,40,127,Asia/Pyongyang,AS
 KOR,KR,South Korea,Republic of Korea,51418000,99720,36.5,127.75,Asia/Seoul,AS
 KWT,KW,Kuwait,State of Kuwait,4622000,17818,29.5,47.75,Asia/Kuwait,AS
 KAZ,KZ,Kazakhstan,Republic of Kazakhstan,18745000,2724900,48,68,,AS
-LAO,LA,Laos,Lao People’s Democratic Republic,7234000,236800,18,105,Asia/Vientiane,AS
+LAO,LA,Laos,Lao People's Democratic Republic,7234000,236800,18,105,Asia/Vientiane,AS
 LBN,LB,Lebanon,Lebanese Republic,6100000,10400,33.83333,35.83333,Asia/Beirut,AS
 LCA,LC,Saint Lucia,,166000,616,13.88333,-60.96667,America/Castries,NA
 LIE,LI,Liechtenstein,Principality of Liechtenstein,39000,160,47.16667,9.53333,Europe/Vaduz,EU
@@ -144,14 +144,14 @@ PRT,PT,Portugal,Portuguese Republic,10355000,92090,39.6945,-8.13057,Europe/Lisbo
 PLW,PW,Palau,Republic of Palau,22000,459,7.51507,134.57524,Pacific/Melekeok,OC
 PRY,PY,Paraguay,Republic of Paraguay,7026000,406752,-23.33333,-58,America/Asuncion,SA
 QAT,QA,Qatar,State of Qatar,2364000,11586,25.5,51.25,Asia/Doha,AS
-ROU,RO,Romania,România,21457000,238391,46,25,Europe/Bucharest,EU
+ROU,RO,Romania,,21457000,238391,46,25,Europe/Bucharest,EU
 SRB,RS,Serbia,Republic of Serbia,7078000,77474,44.81892,20.45998,Europe/Belgrade,EU
 RUS,RU,Russia,Russian Federation,142123000,17098242,60,100,,EU
 RWA,RW,Rwanda,Republic of Rwanda,12187000,26338,-2,30,Africa/Kigali,AF
 SAU,SA,Saudi Arabia,Kingdom of Saudi Arabia,33091000,2149690,25,45,Asia/Riyadh,AS
 SLB,SB,Solomon Islands,,660000,28896,-8,159,Pacific/Guadalcanal,OC
 SYC,SC,Seychelles,Republic of Seychelles,95000,455,-4.58333,55.66667,Indian/Mahe,AF
-SDN,SD,Sudan,Republic of the Sudan,43121000,1861484,16,30,Africa/Khartoum,AF
+SDN,SD,Sudan,Republic of Sudan,43121000,1861484,16,30,Africa/Khartoum,AF
 SWE,SE,Sweden,Kingdom of Sweden,10041000,450295,62,15,Europe/Stockholm,EU
 SGP,SG,Singapore,Republic of Singapore,5996000,697,1.36667,103.8,Asia/Singapore,AS
 SVN,SI,Slovenia,Republic of Slovenia,2102000,20273,46.08333,15,Europe/Ljubljana,EU
@@ -165,7 +165,7 @@ SSD,SS,South Sudan,Republic of South Sudan,10205000,644329,7.5,30,Africa/Juba,AF
 STP,ST,Sao Tome and Principe,Democratic Republic of Sao Tome and Principe,204000,964,1,7,Africa/Sao_Tome,AF
 SLV,SV,El Salvador,Republic of El Salvador,6187000,21041,13.83333,-88.91667,America/El_Salvador,NA
 SYR,SY,Syria,Syrian Arab Republic,19454000,185180,35,38,Asia/Damascus,AS
-SWZ,SZ,Swaziland,Eswatini,1087000,17364,-26.5,31.5,Africa/Mbabane,AF
+SWZ,SZ,Eswatini,Kingdom of Eswatini,1087000,17364,-26.5,31.5,Africa/Mbabane,AF
 TCD,TD,Chad,Republic of Chad,15833000,1284000,15,19,Africa/Ndjamena,AF
 TGO,TG,Togo,Togolese Republic,8176000,56785,8.66667,1.08333,Africa/Lome,AF
 THA,TH,Thailand,Kingdom of Thailand,68616000,513120,15.5,101,Asia/Bangkok,AS
