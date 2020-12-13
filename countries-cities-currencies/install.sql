@@ -877,7 +877,6 @@ INSERT INTO currencies_countries (currency_id, country_id) VALUES ('USD', 'TLS')
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('USD', 'USA');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('UYU', 'URY');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('UZS', 'UZB');
-INSERT INTO currencies_countries (currency_id, country_id) VALUES ('VER', 'YEM');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('VES', 'VEN');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('VND', 'VNM');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('VUV', 'VUT');
@@ -902,6 +901,7 @@ INSERT INTO currencies_countries (currency_id, country_id) VALUES ('XOF', 'MLI')
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('XOF', 'NER');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('XOF', 'SEN');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('XOF', 'TGO');
+INSERT INTO currencies_countries (currency_id, country_id) VALUES ('YER', 'YEM');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('ZAR', 'LSO');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('ZAR', 'ZAF');
 INSERT INTO currencies_countries (currency_id, country_id) VALUES ('ZMW', 'ZMB');
@@ -917,21 +917,23 @@ COMMIT;
 /*************** Verification ****************/
 /*********************************************/
 
-SELECT 'Verfification:' as "Verification" FROM regions WHERE region_id = 'EU';
+SELECT 'Verfification:' AS "Verification" FROM regions WHERE region_id = 'EU';
 
-SELECT 'regions' as "Table", 7 as "provided", count(1) as "actual" from regions
+SELECT 'regions' AS "Table", 7 AS "provided", COUNT(1) AS "actual" FROM regions
 UNION ALL
-SELECT 'countries' as "Table", 196 as "provided", count(1) as "actual" from countries
+SELECT 'countries' AS "Table", 196 AS "provided", COUNT(1) AS "actual" FROM countries
 UNION ALL
-SELECT 'cities' as "Table", 204 as "provided", count(1) as "actual" from cities
+SELECT 'cities' AS "Table", 204 AS "provided", COUNT(1) AS "actual" FROM cities
 UNION ALL
-SELECT 'currencies' as "Table", 146 as "provided", count(1) as "actual" from currencies;
+SELECT 'currencies' AS "Table", 146 AS "provided", COUNT(1) AS "actual" FROM currencies
+UNION ALL
+SELECT 'currencies_countries' AS "Table", 203 AS "provided", COUNT(1) AS "actual" FROM currencies_countries;
 
-SELECT 'The installation is finished, please check the verification output above!' as "Thank you!"
+SELECT 'The installation is finished, please check the verification output above!' AS "Thank you!"
    FROM regions WHERE region_id = 'EU'
 UNION ALL
-SELECT 'If the ''provided'' and ''actual'' row count match, the installation was successful.' as "Thank you!"
+SELECT 'If the ''provided'' and ''actual'' row count match, the installation was successful.' AS "Thank you!"
    FROM regions WHERE region_id = 'EU'
 UNION ALL
-SELECT 'If the row counts do not match, please check the above output for error messages.' as "Thank you!"
+SELECT 'If the row counts do not match, please check the above output for error messages.' AS "Thank you!"
    FROM regions WHERE region_id = 'EU';
