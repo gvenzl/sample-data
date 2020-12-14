@@ -32,7 +32,7 @@ Table: regions
 | Field     | Description | Length | Mandatory |
 | --------- | ----------- | ------ | --------- |
 | region_id | The primary key for a region. | 2 characters | Yes |
-| name      | The name of the region. | 13 characters | Yes |
+| name      | The name of a region. | 13 characters | Yes |
 
 ### Table `countries`
 
@@ -72,7 +72,7 @@ Table: countries
 
 ### Table `cities`
 
-Contains the capital cities of a country and some additional data points such as population and longitude and latitude.
+Contains the capital cities of a country and some additional data points such as population, longitude and latitude.
 
 ```sql
 Table: cities
@@ -128,7 +128,7 @@ Table: currencies
 | currency_id | The primary key for a currency using the three-letter alpha code as specified by the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) standard. | 3 characters | Yes |
 | name | The name of a currency, excluding any non-ascii character such as region specific accents and apostrophes. | 50 characters | Yes |
 | official_name | The official name of a currency, *including* region specific accents and apostrophes in the name. | 200 characters | No |
-| symbol | The currency symbol encoded in UTF-8. | 18 characters long | Yes |
+| symbol | The currency symbol encoded in UTF-8. | 18 characters | Yes |
 
 ### Table `currencies_countries`
 
