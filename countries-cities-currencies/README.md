@@ -64,7 +64,7 @@ Table: countries
 | name | The common name of a country, excluding any non-ascii character such as region specific accents and apostrophes. | 100 characters | Yes |
 | official_name | The official name of a country. If the country's common and official name are the same, this field may be empty. This field also *includes* region specific accents and apostrophes in the name.| 200 characters | No |
 | population | The population of a country. | Integer with up to 10 digits | No |
-| area\_sq\_km | The area of a country measured in square kilometers (km2). | A number with a precision of 10 and scale of 2 digits, i.e. up to 10 digits in total where 2 of them are to the right of the decimal point: NNNNNNNN.MM  | No |
+| area\_sq\_km | The area of a country measured in square kilometers (km<sup>2</sup>). | A number with a precision of 10 and scale of 2 digits, i.e. up to 10 digits in total where 2 of them are to the right of the decimal point: NNNNNNNN.MM  | No |
 | latitude | The latitude of a country expressed in [decimal degrees](https://en.wikipedia.org/wiki/Decimal_degrees), pointing to the average middle of the country. | A number with a precision of 8 and scale of 5 digits: NN.MMMMM | No |
 | longitude | The longitude of a country expressed in [decimal degrees](https://en.wikipedia.org/wiki/Decimal_degrees), pointing to the average middle of the country. | A number with a precision of 8 and scale of 5 digits: NN.MMMMM | No |
 | timezone | The time zone name of a given country. If a country spans multiple time zones, this field will be empty. | 40 characters | No |
