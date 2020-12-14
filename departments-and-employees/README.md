@@ -45,7 +45,7 @@ Table: departments
 | Field     | Description | Length | Mandatory |
 | --------- | ----------- | ------ | --------- |
 | department_id | The primary key for a department. | SMALLINT (usually a 2 byte integer with -32768 to +32767 range) | Yes |
-| name      | The name of a department. | 13 characters | Yes |
+| name      | The name of a department. | 10 characters | Yes |
 | location | The location of a department. | 8 characters | Yes |
 
 ### Table `employees`
@@ -73,8 +73,8 @@ Table: employees
 | --------- | ----------- | ------ | --------- |
 | employee_id | The primary key for an employee. | SMALLINT (usually a 2 byte integer with -32768 to +32767 range) | Yes |
 | first\_name | The first name of an employee. | 8 characters | No |
-| last\_name | The last name of an employee. | 9 characters | No |
-| job\_title | The job title of an employee | 9 characters | Yes |
+| last\_name | The last name of an employee. | 9 characters | Yes |
+| job\_title | The job title of an employee | 9 characters | No |
 | manager\_id | The employee\_id of the employee's manager. | SMALLINT (usually a 2 byte integer with -32768 to +32767 range) | No |
 | hire\_date | The hire date of an employee | DATE (YYYY-MM-DD) | Yes |
 | salary | The annual base salary of an employee. | A number with a precision of 7 and scale of 2 digits: NNNNN.MM | Yes |
