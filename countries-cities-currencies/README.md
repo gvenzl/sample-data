@@ -31,8 +31,8 @@ Table: regions
 
 | Field     | Description | Length | Mandatory |
 | --------- | ----------- | ------ | --------- |
-| region_id | The primary key for a region | 2 characters | Yes |
-| name      | The name of the region | 13 characters | Yes |
+| region_id | The primary key for a region. | 2 characters | Yes |
+| name      | The name of the region. | 13 characters | Yes |
 
 ### Table `countries`
 
@@ -63,8 +63,8 @@ Table: countries
 | country_code | The two-letter country code for a country as specified in the [ISO 3166-1 alpha -2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) standard. | 2 characters | Yes |
 | name | The common name of a country, excluding any non-ascii character such as region specific accents and apostrophes. | 100 characters | Yes |
 | official_name | The official name of a country. If the country's common and official name are the same, this field may be empty. This field also *includes* region specific accents and apostrophes in the name.| 200 characters | No |
-| population | The population of a country | Integer with up to 10 digits | No |
-| area\_sq\_km | The area of a country measured in square kilometers (km2) | A number with a precision of 10 and scale of 2 digits, i.e. up to 10 digits in total where 2 of them are to the right of the decimal point: NNNNNNNN.MM  | No |
+| population | The population of a country. | Integer with up to 10 digits | No |
+| area\_sq\_km | The area of a country measured in square kilometers (km2). | A number with a precision of 10 and scale of 2 digits, i.e. up to 10 digits in total where 2 of them are to the right of the decimal point: NNNNNNNN.MM  | No |
 | latitude | The latitude of a country expressed in [decimal degrees](https://en.wikipedia.org/wiki/Decimal_degrees), pointing to the average middle of the country. | A number with a precision of 8 and scale of 5 digits: NN.MMMMM | No |
 | longitude | The longitude of a country expressed in [decimal degrees](https://en.wikipedia.org/wiki/Decimal_degrees), pointing to the average middle of the country. | A number with a precision of 8 and scale of 5 digits: NN.MMMMM | No |
 | timezone | The time zone name of a given country. If a country spans multiple time zones, this field will be empty. | 40 characters | No |
@@ -95,7 +95,7 @@ Table: cities
 
 | Field | Description | Length | Mandatory |
 | ----- | ----------- | ------ | --------- |
-| city_id | The primary key for a city using a combination of the three-letter country_id and an ascending four digit number, e.g `AUT0001` = `AUT` + `0001` for Vienna | 7 characters | Yes |
+| city_id | The primary key for a city using a combination of the three-letter country_id and an ascending four digit number, e.g `AUT0001` = `AUT` + `0001` for Vienna. | 7 characters | Yes |
 | name | The common name of a city, excluding any non-ascii character such as region specific accents and apostrophes. | 100 characters | Yes |
 | official_name | The official name of a city. If the city's common and official name are the same, this field may be empty. This field also *includes* region specific accents and apostrophes in the name. | 200 characters | No |
 | population | The population of a city. | Integer with up to 8 digits | No
@@ -154,10 +154,13 @@ Table: currencies_countries
 ## Files
 | File name | Description |
 | --------- | ------------|
-| [cities.csv](cities.csv) | Comma separated file with cities data |
-| [countries.csv](countries.csv) | Comma separated file with countries	 data |
-| [currencies.csv](currencies.csv) | Comma separated file with currencies data |
-| [regions.csv](regions.csv) | Comma separated file with regions data |
+| [cities.csv](cities.csv) | Comma separated file with cities data. |
+| [countries.csv](countries.csv) | Comma separated file with countries	 data. |
+| [currencies.csv](currencies.csv) | Comma separated file with currencies data. |
+| [currencies_countries.csv](currencies_countries.csv) | Comma separated file with currencies per country data. |
+| [install.sql](install.sql) | SQL file to install this data set in a database. |
+| [regions.csv](regions.csv) | Comma separated file with regions data. |
+| [uninstall.sql](uninstall.sql) | SQL file to uninstall this data set from a database. |
 
 
 ## Database install instructions
