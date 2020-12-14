@@ -2,7 +2,7 @@
 
 This data set contains ***fictional*** departments and employees data. It can be used for educational purposes and to demonstrate basic concepts of relational databases, such as basic `SELECT` statements, joins, `1:N` relationships, hierarchical data structures, etc.
 
-**All files are UTF-8 encoded.**
+**Note that all files are UTF-8 encoded!**
 
 ## Sample output
 
@@ -27,6 +27,8 @@ This data set contains ***fictional*** departments and employees data. It can be
 
 ## Data model
 
+### Table `departments`
+
 ```sql
 Table: departments
 +---------------+-------------+------+-----+---------+-------+
@@ -37,31 +39,56 @@ Table: departments
 | location      | varchar(8)  | NO   |     | NULL    |       |
 +---------------+-------------+------+-----+---------+-------+
 ```
+
+#### Field descriptions
+
+| Field     | Description | Length | Mandatory |
+| --------- | ----------- | ------ | --------- |
+| department_id | The primary key for a department. | SMALLINT (usually a 2 byte integer with -32768 to +32767 range) | Yes |
+| name      | The name of a department. | 13 characters | Yes |
+| location | The location of a department. | 8 characters | Yes |
+
+### Table `employees`
+
 ```sql
 Table: employees
-+---------------+--------------+------+-----+---------+-------+
-| Field         | Type         | Null | Key | Default | Extra |
-+---------------+--------------+------+-----+---------+-------+
-| employee_id   | smallint     | NO   | PRI | NULL    |       |
-| first_name    | varchar(8)   | YES  |     | NULL    |       |
-| last_name     | varchar(9)   | NO   |     | NULL    |       |
-| job_title     | varchar(9)   | YES  |     | NULL    |       |
-| manager_id    | smallint     | YES  | MUL | NULL    |       |
-| hire_date     | date         | NO   |     | NULL    |       |
-| salary        | numeric(7,2) | NO   |     | NULL    |       |
-| commission    | numeric(7,2) | YES  |     | NULL    |       |
-| department_id | smallint     | NO   | MUL | NULL    |       |
-+---------------+--------------+------+-----+---------+-------+
++---------------+--------------+------+-----+---------+-----------------------------------------+
+| Field         | Type         | Null | Key | Default | Extra                                   |
++---------------+--------------+------+-----+---------+-----------------------------------------+
+| employee_id   | smallint     | NO   | PRI | NULL    |                                         |
+| first_name    | varchar(8)   | YES  |     | NULL    |                                         |
+| last_name     | varchar(9)   | NO   |     | NULL    |                                         |
+| job_title     | varchar(9)   | YES  |     | NULL    |                                         |
+| manager_id    | smallint     | YES  | MUL | NULL    | Foreign key to employees.employee_id    |
+| hire_date     | date         | NO   |     | NULL    |                                         |
+| salary        | numeric(7,2) | NO   |     | NULL    |                                         |
+| commission    | numeric(7,2) | YES  |     | NULL    |                                         |
+| department_id | smallint     | NO   | MUL | NULL    | Foreign key to deparments.department_id |
++---------------+--------------+------+-----+---------+-----------------------------------------+
 ```
+
+#### Field descriptions
+
+| Field     | Description | Length | Mandatory |
+| --------- | ----------- | ------ | --------- |
+| employee_id | The primary key for an employee. | SMALLINT (usually a 2 byte integer with -32768 to +32767 range) | Yes |
+| first\_name | The first name of an employee. | 8 characters | No |
+| last\_name | The last name of an employee. | 9 characters | No |
+| job\_title | The job title of an employee | 9 characters | Yes |
+| manager\_id | The employee\_id of the employee's manager. | SMALLINT (usually a 2 byte integer with -32768 to +32767 range) | No |
+| hire\_date | The hire date of an employee | DATE (YYYY-MM-DD) | Yes |
+| salary | The annual base salary of an employee. | A number with a precision of 7 and scale of 2 digits: NNNNN.MM | Yes |
+| commission | The annual commission of an employee. | A number with a precision of 7 and scale of 2 digits: NNNNN.MM | No |
+| department\_id | The department\_id of an employee and foreign key to the `departments` table. | SMALLINT (usually a 2 byte integer with -32768 to +32767 range) | Yes| 
 
 ## Files
 | File name | Description |
 | --------- | ------------|
-| [departments.csv](departments.csv) | Comma separated file with departments data |
-| [employees.csv](employees.csv) | Comma separated file with employees data |
-| [install.oracle.sql](install.oracle.sql) | Setup file for Oracle database |
-| [install.sql](install.sql) | Setup file for PostgreSQL, MySQL, SQL Server, Db2 |
-| [uninstall.sql](uninstall.sql) | Uninstall file for all databases |
+| [departments.csv](departments.csv) | Comma separated file with departments data. |
+| [employees.csv](employees.csv) | Comma separated file with employees data. |
+| [install.oracle.sql](install.oracle.sql) | Setup file for Oracle database. |
+| [install.sql](install.sql) | Setup file for PostgreSQL, MySQL, SQL Server, Db2. |
+| [uninstall.sql](uninstall.sql) | Uninstall file for all databases. |
 
 ## Database install instructions
 
