@@ -107,7 +107,7 @@ Table: cities
 
 ### Table `currencies`
 
-Containers the world's currencies, official name and symbol.
+Contains the world's currencies, official names and symbols.
 
 ```sql
 Table: currencies
