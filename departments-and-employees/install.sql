@@ -90,3 +90,22 @@ INSERT INTO employees (employee_id, first_name, last_name, job_title, manager_id
   VALUES (1404, 'Mark', 'Powers', 'Associate', 1387, '2018-01-14', 1000, null, 3);
 
 COMMIT;
+
+/*********************************************/
+/*************** Verification ****************/
+/*********************************************/
+
+SELECT 'Verfification:' AS "Verification" FROM departments WHERE department_id = 1;
+
+SELECT 'departments' AS "Table", 4 AS "provided", COUNT(1) AS "actual" FROM departments
+UNION ALL
+SELECT 'employees' AS "Table", 14 AS "provided", COUNT(1) AS "actual" FROM employees;
+
+SELECT 'The installation is finished, please check the verification output above!' AS "Thank you!"
+   FROM departments WHERE department_id = 1
+UNION ALL
+SELECT 'If the ''provided'' and ''actual'' row counts match, the installation was successful.' AS "Thank you!"
+   FROM departments WHERE department_id = 1
+UNION ALL
+SELECT 'If the row counts do not match, please check the above output for error messages.' AS "Thank you!"
+   FROM departments WHERE department_id = 1;
