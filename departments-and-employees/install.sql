@@ -95,7 +95,7 @@ COMMIT;
 /*************** Verification ****************/
 /*********************************************/
 
-SELECT 'Verfification:' AS "Verification" FROM departments WHERE department_id = 1;
+SELECT 'Verification:' AS "Verification" FROM departments WHERE department_id = 1;
 
 SELECT 'departments' AS "Table", 4 AS "provided", COUNT(1) AS "actual" FROM departments
 UNION ALL

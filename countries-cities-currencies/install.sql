@@ -917,7 +917,7 @@ COMMIT;
 /*************** Verification ****************/
 /*********************************************/
 
-SELECT 'Verfification:' AS "Verification" FROM regions WHERE region_id = 'EU';
+SELECT 'Verification:' AS "Verification" FROM regions WHERE region_id = 'EU';
 
 SELECT 'regions' AS "Table", 7 AS "provided", COUNT(1) AS "actual" FROM regions
 UNION ALL
