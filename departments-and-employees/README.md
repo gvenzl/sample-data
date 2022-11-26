@@ -82,6 +82,7 @@ Table: employees
 | department\_id | The department\_id of an employee and foreign key to the `departments` table. | SMALLINT (usually a 2 byte integer with -32768 to +32767 range) | Yes| 
 
 ## Files
+
 | File name | Description |
 | --------- | ------------|
 | [departments.csv](departments.csv) | Comma separated file with departments data. |
@@ -124,7 +125,7 @@ $ db2 -tvmf install.sql
 
 ## Database uninstall instructions
 
-Connect to your database of choice and execute the `uninstall.sql` file.  
+Connect to your database of choice and execute the `uninstall.sql` file.
 
 ### MySQL
 ```bash

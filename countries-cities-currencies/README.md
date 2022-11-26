@@ -152,6 +152,7 @@ Table: currencies_countries
 | country_id  | The composite primary key and foreign key to the `countries` table. | 3 characters | Yes |
 
 ## Files
+
 | File name | Description |
 | --------- | ------------|
 | [cities.csv](cities.csv) | Comma separated file with cities data. |
@@ -165,7 +166,7 @@ Table: currencies_countries
 
 ## Database install instructions
 
-Connect to your database of choice via the command prompt and execute the `install.sql` file.  
+Connect to your database of choice via the command prompt and execute the `install.sql` file.
 
 ### MySQL
 Please make sure that your connections is using the `utf8mb4` character set.  
@@ -198,7 +199,7 @@ $ db2 -tvmf install.sql
 
 ## Database uninstall instructions
 
-Connect to your database of choice via the command prompt and execute the `uninstall.sql` file.  
+Connect to your database of choice via the command prompt and execute the `uninstall.sql` file.
 
 ### MySQL
 ```bash
@@ -226,7 +227,7 @@ SQL> @uninstall.sql
 $ db2 -tvmf uninstall.sql
 ```
 
-# Acknowledgments
+## Acknowledgments
 ***The data here is provided with the generous help of my gorgeous wife Federica Venzl.***
 
 ## Data sources
