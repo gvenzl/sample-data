@@ -7,11 +7,18 @@
  *
  * Copyright 2020 Gerald Venzl
  *
+ * Data Sources:
+ * - National Geographic Atlas of the World, 11th Edition, October 2019 (ISBN-13: 978-1426220586)
+ * - GeoNames.org (https://www.geonames.org/)
+ *
  * Provided with the generous help of my gorgeous wife Federica Venzl during the
  * Coronavirus (COVID-19) pandemic.
  *
  * This work is licensed under the
  * Creative Commons Attribution 4.0 International Public License, CC BY 4.0
+ *
+ * The Data is provided "as is" without warranty or any representation of
+ * accuracy, timeliness or completeness.
  *
  *    https://creativecommons.org/licenses/by/4.0/
  */ 

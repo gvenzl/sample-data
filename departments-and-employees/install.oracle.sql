@@ -10,12 +10,6 @@
  * This work is licensed under the
  * Creative Commons Attribution 4.0 International Public License, CC BY 4.0
  *
- * Data Sources:
- * - This data set is fictional and has no data sources.
- *
- * The Data is provided "as is" without warranty or any representation of
- * accuracy, timeliness or completeness.
- *
  *    https://creativecommons.org/licenses/by/4.0/
  */ 
 
