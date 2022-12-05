@@ -1,0 +1,136 @@
+METADATA_ID,TABLE_NAME,COLUMN_NAME,MEANING
+1,metadata,metadata_id,Internally generated id for the primary key value.
+2,metadata,table_name,The name of the table.
+3,metadata,column_name,The name of the column.
+4,metadata,meaning,The meaning of the data in that particular column in the table.
+5,stars,star_id,Internally generated id for the primary key value.
+6,stars,name,The name of the star.
+7,stars,discoverer,The person who discovered the star.
+8,stars,dicovery_date,The date when the star has been discovered.
+9,stars,mass_kg_10_exp_24,Mass of the body in 10^24 kilograms.
+10,stars,gm_10_exp_6_km_exp_3_per_s_exp_2,Gravitational constant times the mass of the body in 10^6 kilometers^3 / seconds^2 (x 10^6 km^3/s^2).
+11,stars,volume_10_exp_12_km_exp_3,Volume of the body in 10^12 km^3.
+12,stars,mean_volumetric_radius_km,Radius of a sphere with the same volume as the body.
+13,stars,mean_density_kg_per_m_exp_3,Average density of the body (mass/volume) in kilograms/(meter^3).
+14,stars,gravity_m_per_s_exp_2,"Equatorial gravitational acceleration at the surface of the body or the 1 bar level, not including the effects of rotation, in meters/(second^2)."
+15,stars,escape_velocity_km_per_s,Initial velocity required to escape the body's gravitational pull in kilometers/second (at equator).
+16,stars,ellipticity,"Flattening - The ratio (equatorial - polar radius)/(equatorial radius), dimensionless."
+17,stars,moment_of_inertia_I_per_MR_exp_2,"The moment of inertia of the body expressed as the rotational inertia divided by the body's mass x radius^2, where radius^2 = {2(Requator^2) + Rpolar^2}/3. A hollow spherical shell has a moment of inertia of 2/3, a homogeneous sphere 0.4, dimensionless."
+18,stars,vband_magnitude,"V-band magnitude V(1,0) - The magnitude of the body in the V-band (0.549 micrometers) if it were one AU (1.496 x 10^8  kilometers) from the Earth at a phase angle of zero, dimensionless."
+19,stars,absolute_magnitude,?
+20,stars,luminosity_10_exp_24_j_per_s,Body's luminosity in 10^24 Joule per second.
+21,stars,mass_conversion_rate_10_exp_6_kg_per_s,?
+22,stars,mean_energy_production_10_exp_minus_3_J_per_kg_s,?
+23,stars,surface_emission_10_exp_6_J_per_m_exp_2_s,?
+24,stars,spectral_type,?
+25,stars,central_pressure_10_exp_11_bar,Pressue at the center of the body in 10^11 bar.
+26,stars,central_temperature_10_exp_7_K,Temperature at the center of the body in 10^7 Kelvin.
+27,stars,central_density_10_exp_5_kg_per_m_exp_3,Density at the center fo the body in 10^5 kilograms per meters^3.
+28,stars,sidereal_rotation_period_hrs,"Time for one rotation of the body on its axis relative to the fixed stars, in earth hours. A minus sign indicates retrograde (backwards relative to the Earth) rotation."
+29,stars,obliquity_to_ecliptic_degrees,?
+30,stars,speed_relative_to_nearby_stars_km_per_s,Body's speed relative to nearby stars in km/s.
+31,stars,north_pole_of_rotation_right_ascension,?
+32,stars,north_pole_of_rotation_declination,?
+33,stars,north_pole_of_rotation_reference_date,Reference date of rotation measured in UTC. This string contains the ISO 8601 date format followed by the Julian Day number in parenthesis.
+34,stars,apparent_diameter_from_earth_at_1_AU_s_of_arc,?
+35,stars,max_apparent_diameter_from_earth_s_of_arc,?
+36,stars,min_apparent_diameter_from_earth_s_of_arc,?
+37,stars,mean_distance_from_earth_10_exp_6_km,Mean distance from earth in 10^6 kilometers.
+38,stars,min_distance_from_earth_10_exp_6_km,Minimum distance from earth in 10^6 kilometers.
+39,stars,max_distance_from_earth_10_exp_6_km,Maximum distance from earth in 10^6 kilometers.
+40,stars,min_magentic_field_strength_polar_field_gauss,Minimum magnetic field strength at the polar field in Gauss.
+41,stars,max_magentic_field_strength_polar_field_gauss,Maximum magnetic field strength at the polar field in Gauss.
+42,stars,magentic_strength_sunspots_gauss,Magnetic field strength of sunspots in Gauss.
+43,stars,min_magentic_strength_prominences_gauss,Minimum magnetic field strength of prominences in Gauss.
+44,stars,max_magentic_strength_prominences_gauss,Maximum magnetic field strength of prominences in Gauss.
+45,stars,magentic_strength_chromospheric_plages_gauss,Magnetic field strength of chromospheric plages in Gauss.
+46,stars,magentic_strength_bright_chromospheric_network_gauss,Magnetic field strength of bright chromospheric network in Gauss.
+47,stars,magentic_strength_ephemeral_active_regions_gauss,Magnetic field strength of ephemeral (unipolar) active regions in Gauss.
+48,stars,surface_gas_pressure_top_of_photosphere_mb,Atmospheric pressure at the top of the photosphere surface in millibars.
+49,stars,surface_gas_pressure_bottom_of_photosphere_mb,Atmospheric pressure at the bottom of photosphere surface in millibars.
+50,stars,effective_temperature_K,?
+51,stars,temperature_at_top_of_photosphere_K,Temperature at the top of the photosphere in Kelvin.
+52,stars,temperature_at_bottom_of_photosphere_K,Temperature at the bottom of the photosphere in Kelvin.
+53,stars,temperature_at_top_of_chromosphere_K,Temperature at the top of the chromosphere in Kelvin.
+54,stars,photosphere_thickness_km,Photosphere thickness in kilometers.
+55,stars,chromosphere_thickness_km,Chromosphere thickness in kilometers.
+56,stars,sun_spot_cycle_yrs,Cycle of sun spots in Earth years.
+57,stars,photosphere_composition,Composition of photosphere elements in JSON format.
+58,planets,planet_id,Internally generated id for the primary key value.
+59,planets,name,The name of the planet.
+60,planets,star_id,The ID of the star to which the planet belongs.
+61,planets,discoverer,The person who discovered the planet.
+62,planets,discovery_date,The date when the planet has been discovered.
+63,planets,mass_kg_10_exp_24,Mass of the body in 10^24 kilograms.
+64,planets,volume_10_exp_10_km_exp_3,Volume of the body in 10^12 km^3.
+65,planets,equatorial_radius_km,Radius of the body at the equator in kilometers.
+66,planets,core_radius_km,Radius of the planet core in kilometers.
+67,planets,polar_radius_km,Radius of the body at the poles in kilometers.
+68,planets,mean_volumetric_radius_km,Radius of a sphere with the same volume as the body.
+69,planets,diameter_km,"The planetary diameter used is two times the volumetric mean radius. For Venus, Jupiter, Saturn, Uranus, and Neptune, diameter is approximately to the visible cloud tops."
+70,planets,number_of_moons,"The number of moons orbiting the planet, as certified by the IAU (International Astronomical Union)."
+71,planets,has_ring_system,"This tells whether a planet has a set of rings around it, Saturn being the most obvious example."
+72,planets,has_global_magnetic_field,Indicates whether the planet has a measurable large-scale magnetic field. Mars has localized regional magnetic fields but no global field.
+73,planets,rotation_period_hrs,The time it takes for the planet to complete one rotation relative to the fixed background stars (not relative to the Sun) in hours. Negative numbers indicate retrograde (backwards relative to the Earth) rotation.
+74,planets,length_of_day_hrs,The average time in hours for the Sun to move from the noon position in the sky at a point on the equator back to the same position.
+75,planets,ellipticity,"Flattening - The ratio (equatorial - polar radius)/(equatorial radius), dimensionless."
+76,planets,distance_from_sun_10_exp_6_km,"The average distance from the planet to the Sun in millions of kilometers, also known as the semi-major axis. All planets have orbits which are elliptical, not perfectly circular, so there is a point in the orbit at which the planet is closest to the Sun, the perihelion, and a point furthest from the Sun, the aphelion. The average distance from the Sun is midway between these two values. The average distance from the Earth to the Sun is defined as 1 Astronomical Unit (AU), so the ratio table gives this distance in AU."
+77,planets,mean_distance_from_earth_10_exp_6_km,"Approximate values for the minimum and maximum distances of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020)."
+78,planets,min_distance_from_earth_10_exp_6_km,"Approximate value for the minimum distance of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020)."
+79,planets,max_distance_from_earth_10_exp_6_km,"Approximate value for the maximum distances of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020)."
+80,planets,mean_density_kg_per_m_exp_3,Average density of the body (mass/volume) in kilograms/(meter^3).
+81,planets,gravity_m_per_s_exp_2,"Equatorial gravitational acceleration at the surface of the body or the 1 bar level, not including the effects of rotation, in meters/(second^2)."
+82,planets,acceleration_m_per_s_exp_2,"Effective equatorial gravitational acceleration at the surface of the body or the 1 bar level, including the effects of rotation, in meters/(second^2)."
+83,planets,escape_velocity_km_per_s,Initial velocity required to escape the body's gravitational pull in kilometers/second (at equator).
+84,planets,mean_temperature_K,Mean temperature of the body over the entire surface in Kelvin.
+85,planets,mean_temperature_C,Mean temperature of the body over the entire surface in Celsius.
+86,planets,surface_pressure_bars,"Atmospheric pressure at the surface, in bars."
+87,planets,gm_10_exp_6_km_exp_3_per_s_exp_2,Gravitational constant times the mass of the body in 10^6 kilometers^3/seconds^2.
+88,planets,bond_albedo,"The fraction of incident solar radiation reflected back into space without absorption, dimensionless. Also called planetary albedo."
+89,planets,geometric_albedo,"The ratio of the body's brightness at a phase angle of zero to the brightness of a perfectly diffusing disk with the same position and apparent size, dimensionless. V-band (0.549 micrometers). Earth is highly variable."
+90,planets,vband_magnitude,"The magnitude of the body in the V-band (0.549 micrometers) if it were one AU (1.496 x 10^8  kilometers) from the Earth at a phase angle of zero, dimensionless."
+91,planets,solar_irradiance_W_per_m_exp_2,Solar energy on the body in Watts/(meter^2).
+92,planets,black_body_temperature_K,"Equivalent black body temperature is the surface temperature the body would have if it were in radiative equilibrium and had no atmosphere, but the same albedo, in Kelvin."
+93,planets,topographic_range_km,"Difference in elevation between the highest and lowest points on the planet's surface, in kilometers."
+94,planets,moment_of_inertia_I_per_MR_exp_2,"The moment of inertia of the body expressed as the rotational inertia divided by the body's mass x radius^2, where radius^2 = {2(Requator^2) + Rpolar^2}/3. A hollow spherical shell has a moment of inertia of 2/3, a homogeneous sphere 0.4, dimensionless."
+95,planets,J_2_10_exp_minus_6,"The ratio of the difference in the moments of inertia (rotational vs polar) to the mass of the body times the radius^2,(C-A)/(M R^2), x 10^-6, dimensionless."
+96,planets,semimajor_axis_au,?
+97,planets,semimajor_axis_10_exp_6_km,Approximate mean distance from the Sun from center to center in 10^6 kilometers.
+98,planets,sidereal_orbit_period_days,"The time it takes the body to make one revolution about the Sun relative to the fixed stars in days. For Pluto, it is the time from the last zero longitude crossing to the next (24 July 1820 - 2 July 2068)."
+99,planets,tropical_orbit_period_days,"The average time for the body to make one revolution about the Sun from one point in its seasonal orbit to the equivalent point (e.g. equinox to equinox) in days. For Earth, this equals exactly 1 year. Not known for Pluto."
+100,planets,perihelion_10_exp_6_km,"The point in a body's orbit closest to the Sun, in 10^6 kilometers."
+101,planets,aphelion_10_exp_6_km,"The point in a body's orbit furthest from the Sun, in 10^6 kilometers."
+102,planets,synodic_period_days,"The time interval between similar configurations in the orbit (e.g. opposition) of the body and Earth, in days."
+103,planets,orbital_period_days,"The time in Earth days for a planet to orbit the Sun from one vernal equinox to the next. Also known as the tropical orbit period, this is equal to a year on Earth. For Pluto, the tropical orbit period is not well known, the sidereal orbit period is used."
+104,planets,mean_orbital_velocity_km_per_s,"The average speed of the body in elliptical orbit, in kilometers/second."
+105,planets,max_orbital_velocity_km_per_s,"Maximum orbital velocity, at perihelion, in kilometers/second."
+106,planets,min_orbital_velocity_km_per_s,"Minimum orbital velocity, at aphelion, in kilometers/second."
+107,planets,orbital_inclination_degrees,"The inclination of the orbit to the ecliptic, in degrees."
+108,planets,orbital_eccentricity,"A measure of the circularity of the orbit, equal to (aphelion - perihelion distance)/(2 x semi-major axis). For a circular orbit eccentricity = 0. Dimensionless."
+109,planets,sidereal_rotation_period_hrs,"The time for one rotation of the body on its axis relative to the fixed stars, in hours. A minus sign indicates retrograde (backwards relative to the Earth) rotation."
+110,planets,obliquity_to_orbit_degrees,"The angle between the body's equator and the body's orbital plane, with north defined by the right-hand rule. (J2000)"
+111,planets,inclination_of_equator_degrees,"The angle between the equator and orbital plane with north defined as pole axis above (north of) the plane of the solar system, also denoted as axial tilt. (J2000)"
+112,planets,apparent_diameter_from_earth_at_1_AU_s_of_arc,?
+113,planets,max_apparent_diameter_from_earth_s_of_arc,?
+114,planets,min_apparent_diameter_from_earth_s_of_arc,?
+115,planets,mean_apparent_diameter_from_earth_s_of_arc,?
+116,planets,mean_apparent_visual_magnitude_from_earth,?
+117,planets,max_visual_magnitude,?
+118,planets,longitude_of_ascending_node_degrees,The longitude in a body's orbit at which it crosses the ecliptic plane with increasing latitude (i.e. crosses the ecliptic from south to north).
+119,planets,longitude_of_perihelion_degrees,The longitude in a body's orbit at which it reaches the point closest to the Sun.
+120,planets,mean_longitude_degrees,"The longitude a body was at in its orbit at 12:00 Universal (Greenwich) Time on January 1, 2000, also known as J2000 or Julian Day 2451545.0"
+121,planets,north_pole_of_rotation_right_ascension,?
+122,planets,north_pole_of_rotation_declination,?
+123,planets,north_pole_of_rotation_reference_date,Reference date of rotation measured in UTC. This string contains the ISO 8601 date format followed by the Julian Day number in parenthesis.
+124,planets,magnetosphere_model,The model used for charting the magnetosphere.
+125,planets,dipole_field_strength_gauss_R_exp_3,"The strength of the dipole portion of the planetary magnetic field outside the planet in Gauss-R^3, where R is in units of planet radius. (Dividing by the distance R^3 gives the field in Gauss)"
+126,planets,dipole_tilt_to_rotational_axis_degrees,Tilt of the dipole axis to the axis of rotation in degrees.
+127,planets,longitude_of_tilt_degrees,?
+128,planets,dipole_offset_R,The offset distance of the dipole center to the planet center in units of planet radius.
+129,planets,surface_field_strength_1_R_gauss,Range of total field strength at planet radius in Gauss.
+130,planets,geomagnetic_poles_model,The model used for charting the geomagnetic poles.
+131,planets,latitude_geocentric_dipole_degrees,The latitude of the geocentric dipole.
+132,planets,longitude_geocentric_dipole_degrees,The longitude of the geocentric dipole.
+133,planets,latitude_magnetic_north_pole_degrees,The latitude of the magnetic north pole.
+134,planets,longitude_magnetic_north_pole_degrees,The longitude of the magnetic north pole.
+135,planets,atmosphere_composition,Composition of atmosphere elements in JSON format.
