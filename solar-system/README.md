@@ -42,7 +42,7 @@ Table: stars
 | discoverer                                           | varchar(100)  | YES  |     | NULL    |       |
 | dicovery_date                                        | date          | YES  |     | NULL    |       |
 | mass_kg_10_exp_24                                    | real          | YES  |     | NULL    |       |
-| gm_km_10_exp_6_km_exp_3_per_s_exp_2                  | real          | YES  |     | NULL    |       |
+| gm_10_exp_6_km_exp_3_per_s_exp_2                     | real          | YES  |     | NULL    |       |
 | volume_10_exp_12_km_exp_3                            | real          | YES  |     | NULL    |       |
 | mean_volumetric_radius_km                            | real          | YES  |     | NULL    |       |
 | mean_density_kg_per_m_exp_3                          | real          | YES  |     | NULL    |       |
@@ -61,7 +61,7 @@ Table: stars
 | central_temperature_10_exp_7_K                       | real          | YES  |     | NULL    |       |
 | central_density_10_exp_5_kg_per_m_exp_3              | real          | YES  |     | NULL    |       |
 | sidereal_rotation_period_hrs                         | real          | YES  |     | NULL    |       |
-| obliquity_to_ecliptic_deg                            | real          | YES  |     | NULL    |       |
+| obliquity_to_ecliptic_degrees                        | real          | YES  |     | NULL    |       |
 | speed_relative_to_nearby_stars_km_per_s              | real          | YES  |     | NULL    |       |
 | north_pole_of_rotation_right_ascension               | real          | YES  |     | NULL    |       |
 | north_pole_of_rotation_declination                   | real          | YES  |     | NULL    |       |
@@ -133,7 +133,7 @@ Table: planets
 | mean_temperature_K                            | real          | YES  |     | NULL    |                              |
 | mean_temperature_C                            | real          | YES  |     | NULL    |                              |
 | surface_pressure_bars                         | real          | YES  |     | NULL    |                              |
-| gm_km_10_exp_6_km_exp_3_per_s_exp_2           | real          | YES  |     | NULL    |                              |
+| gm_10_exp_6_km_exp_3_per_s_exp_2              | real          | YES  |     | NULL    |                              |
 | bond_albedo                                   | real          | YES  |     | NULL    |                              |
 | geometric_albedo                              | real          | YES  |     | NULL    |                              |
 | vband_magnitude                               | real          | YES  |     | NULL    |                              |
@@ -142,6 +142,7 @@ Table: planets
 | topographic_range_km                          | real          | YES  |     | NULL    |                              |
 | moment_of_inertia_I_per_MR_exp_2              | real          | YES  |     | NULL    |                              |
 | J_2_10_exp_minus_6                            | real          | YES  |     | NULL    |                              |
+| semimajor_axis_au                             | real          | YES  |     | NULL    |                              |
 | semimajor_axis_10_exp_6_km                    | real          | YES  |     | NULL    |                              |
 | sidereal_orbit_period_days                    | real          | YES  |     | NULL    |                              |
 | tropical_orbit_period_days                    | real          | YES  |     | NULL    |                              |
@@ -170,12 +171,12 @@ Table: planets
 | north_pole_of_rotation_declination            | varchar(25)   | YES  |     | NULL    |                              |
 | north_pole_of_rotation_reference_date         | varchar(35)   | YES  |     | NULL    |                              |
 | magnetosphere_model                           | varchar(50)   | YES  |     | NULL    |                              |
-| dipole_field_strength_Gauss_R_exp_3           | real          | YES  |     | NULL    |                              |
+| dipole_field_strength_gauss_R_exp_3           | real          | YES  |     | NULL    |                              |
 | dipole_tilt_to_rotational_axis_degrees        | real          | YES  |     | NULL    |                              |
 | longitude_of_tilt_degrees                     | real          | YES  |     | NULL    |                              |
 | dipole_offset_R                               | real          | YES  |     | NULL    |                              |
-| surface_field_strength_1_R_Gauss              | varchar(25)   | YES  |     | NULL    |                              |
-| geocentric_poles_model                        | varchar(50)   | YES  |     | NULL    |                              |
+| surface_field_strength_1_R_gauss              | varchar(25)   | YES  |     | NULL    |                              |
+| geomagnetic_poles_model                       | varchar(50)   | YES  |     | NULL    |                              |
 | latitude_geocentric_dipole_degrees            | real          | YES  |     | NULL    |                              |
 | longitude_geocentric_dipole_degrees           | real          | YES  |     | NULL    |                              |
 | latitude_magnetic_north_pole_degrees          | real          | YES  |     | NULL    |                              |
