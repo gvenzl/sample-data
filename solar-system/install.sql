@@ -1858,4 +1858,29 @@ INSERT INTO planets
                      '{"surface_pressure":{"pressure:":"~13","unit":"microbar"},"scale_height":{"height":"~50","unit":"km"},"average_temperature":[{"temperature":"24 - 38","unit":"K"},{"temperature":"-247 - -233","unit":"C"}],"mean_molecular_weight":"~28","composition":{"major_elements":{"unit":"percent","elements":[{"N2":99},{"CH4":0.5},{"CO":0.05}]},"traces":["HCN","C2HX"]}}'
  );
 
+/*********************************************/
+/***************** COMMIT ********************/
+/*********************************************/
+
 COMMIT;
+
+/*********************************************/
+/*************** Verification ****************/
+/*********************************************/
+
+SELECT 'Verification:' AS "Verification" FROM stars WHERE star_id = 1;
+
+SELECT 'metadata' AS "Table", 135 AS "provided", COUNT(1) AS "actual" FROM metadata
+UNION ALL
+SELECT 'stars' AS "Table", 1 AS "provided", COUNT(1) AS "actual" FROM stars
+UNION ALL
+SELECT 'planets' AS "Table", 9 AS "provided", COUNT(1) AS "actual" FROM planets;
+
+SELECT 'The installation is finished, please check the verification output above!' AS "Thank you!"
+   FROM stars WHERE star_id = 1
+UNION ALL
+SELECT 'If the ''provided'' and ''actual'' row counts match, the installation was successful.' AS "Thank you!"
+   FROM stars WHERE star_id = 1
+UNION ALL
+SELECT 'If the row counts do not match, please check the above output for error messages.' AS "Thank you!"
+   FROM stars WHERE star_id = 1;
