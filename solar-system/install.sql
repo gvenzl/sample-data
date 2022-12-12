@@ -37,7 +37,7 @@ CREATE TABLE metadata
   metadata_id        NUMERIC         NOT NULL,
   table_name         VARCHAR(13)     NOT NULL,
   column_name        VARCHAR(52)     NOT NULL,
-  meaning            VARCHAR(4000)   NOT NULL,
+  meaning            VARCHAR(4000),
   CONSTRAINT metadata_pk
     PRIMARY KEY (metadata_id)
 );
@@ -61,24 +61,24 @@ CREATE TABLE stars
   ellipticity                                            REAL,                   -- Flattening - The ratio (equatorial - polar radius)/(equatorial radius), dimensionless
   moment_of_inertia_I_per_MR_exp_2                       REAL,                   -- The moment of inertia of the body expressed as the rotational inertia divided by the body's mass x radius^2, where radius^2 = {2(Requator^2) + Rpolar^2}/3. A hollow spherical shell has a moment of inertia of 2/3, a homogeneous sphere 0.4, dimensionless
   vband_magnitude                                        REAL,                   -- V-band magnitude V(1,0) - The magnitude of the body in the V-band (0.549 micrometers) if it were one AU (1.496 x 10^8  kilometers) from the Earth at a phase angle of zero, dimensionless.
-  absolute_magnitude                                     REAL,                   -- ?
+  absolute_magnitude                                     REAL,                   -- The absolute magnitude of the body
   luminosity_10_exp_24_J_per_s                           REAL,                   -- Body's luminosity in 10^24 Joule per second
-  mass_conversion_rate_10_exp_6_kg_per_s                 REAL,                   -- ?
-  mean_energy_production_10_exp_minus_3_J_per_kg_s       REAL,                   -- ?
-  surface_emission_10_exp_6_J_per_m_exp_2_s              REAL,                   -- ?
-  spectral_type                                          VARCHAR(10),            -- ?
+  mass_conversion_rate_10_exp_6_kg_per_s                 REAL,                   -- The mass that's converted into energy in 10^6kg per second.
+  mean_energy_production_10_exp_minus_3_J_per_kg_s       REAL,                   -- The mean energy production of the body in 10^-3 Joule/kilograms per second.
+  surface_emission_10_exp_6_J_per_m_exp_2_s              REAL,                   -- Body's surface energy emission in 10^6 Joule/m2 per seconds.
+  spectral_type                                          VARCHAR(10),            -- The spectral type of the star, see https://lweb.cfa.harvard.edu/~pberlind/atlas/htmls/note.html for reference
   central_pressure_10_exp_11_bar                         REAL,                   -- Pressue at the center of the body in 10^11 bar
   central_temperature_10_exp_7_K                         REAL,                   -- Temperature at the center of the body in 10^7 Kelvin
   central_density_10_exp_5_kg_per_m_exp_3                REAL,                   -- Density at the center fo the body in 10^5 kilograms per meters^3
   sidereal_rotation_period_hrs                           REAL,                   -- Time for one rotation of the body on its axis relative to the fixed stars, in earth hours. A minus sign indicates retrograde (backwards relative to the Earth) rotation.
-  obliquity_to_ecliptic_degrees                          REAL,                   -- ?
+  obliquity_to_ecliptic_degrees                          REAL,                   -- Inclination of the body's equator with respect to the ecliptic.
   speed_relative_to_nearby_stars_km_per_s                REAL,                   -- Body's speed relative to nearby stars in km/s
-  north_pole_of_rotation_right_ascension                 REAL,                   -- ?
-  north_pole_of_rotation_declination                     REAL,                   -- ?
+  north_pole_of_rotation_right_ascension                 REAL,                   -- The angular distance of a particular point measured eastward along the celestial equator from the Sun at the March equinox to the point in question above the Earth.
+  north_pole_of_rotation_declination                     REAL,                   -- Declination of body on the celestial sphereints. Points north of the celestial equator have positive declinations, while those south have negative declinations.
   north_pole_of_rotation_reference_date                  VARCHAR(35),            -- Reference date of rotation measured in UTC. This string contains the ISO 8601 date format followed by the Julian Day number in parenthesis.
-  apparent_diameter_from_earth_at_1_AU_s_of_arc          REAL,                   -- ?
-  max_apparent_diameter_from_earth_s_of_arc              REAL,                   -- ?
-  min_apparent_diameter_from_earth_s_of_arc              REAL,                   -- ? question pedning
+  apparent_diameter_from_earth_at_1_AU_s_of_arc          REAL,                   -- The apparent diameter of the body across its equator as seen from Earth at one Astronomical Unit, measured in arc seconds.
+  max_apparent_diameter_from_earth_s_of_arc              REAL,                   -- The apparent diameter of the body across its equator as seen from Earth at the maximum distance from Earth, measured in arc seconds.
+  min_apparent_diameter_from_earth_s_of_arc              REAL,                   -- The apparent diameter of the body across its equator as seen from Earth at the minimum distance from Earth, measured in arc seconds.
   mean_distance_from_earth_10_exp_6_km                   REAL,                   -- Mean distance from earth in 10^6 kilometers
   min_distance_from_earth_10_exp_6_km                    REAL,                   -- Minimum distance from earth in 10^6 kilometers
   max_distance_from_earth_10_exp_6_km                    REAL,                   -- Maximum distance from earth in 10^6 kilometers
@@ -92,7 +92,7 @@ CREATE TABLE stars
   magentic_strength_ephemeral_active_regions_gauss       REAL,                   -- Magnetic field strength of ephemeral (unipolar) active regions in Gauss
   surface_gas_pressure_top_of_photosphere_mb             REAL,                   -- Atmospheric pressure at the top of the photosphere surface in millibars
   surface_gas_pressure_bottom_of_photosphere_mb          REAL,                   -- Atmospheric pressure at the bottom of photosphere surface in millibars
-  effective_temperature_K                                REAL,                   -- ?
+  effective_temperature_K                                REAL,                   -- The effective temperature of a body is the temperature a black body of the same size must have to yield the same total emissive power, measured in Kelvin.
   temperature_at_top_of_photosphere_K                    REAL,                   -- Temperature at the top of the photosphere in Kelvin
   temperature_at_bottom_of_photosphere_K                 REAL,                   -- Temperature at the bottom of the photosphere in Kelvin
   temperature_at_top_of_chromosphere_K                   REAL,                   -- Temperature at the top of the chromosphere in Kelvin
@@ -148,7 +148,7 @@ CREATE TABLE planets
   topographic_range_km                                   REAL,                   -- Difference in elevation between the highest and lowest points on the planet's surface, in kilometers.
   moment_of_inertia_I_per_MR_exp_2                       REAL,                   -- The moment of inertia of the body expressed as the rotational inertia divided by the body's mass x radius^2, where radius^2 = {2(Requator^2) + Rpolar^2}/3. A hollow spherical shell has a moment of inertia of 2/3, a homogeneous sphere 0.4, dimensionless.
   J_2_10_exp_minus_6                                     REAL,                   -- The ratio of the difference in the moments of inertia (rotational vs polar) to the mass of the body times the radius^2,(C-A)/(M R^2), x 10^-6, dimensionless.
-  semimajor_axis_au                                      REAL,                   -- ?
+  semimajor_axis_au                                      REAL,                   -- Approximate mean distance from the Sun (or other central body in the case of satellites) from center to center in Astronomical Units.
   semimajor_axis_10_exp_6_km                             REAL,                   -- Approximate mean distance from the Sun (or other central body in the case of satellites) from center to center in 10^6 kilometers.
   sidereal_orbit_period_days                             REAL,                   -- The time it takes the body to make one revolution about the Sun relative to the fixed stars in days. For Pluto, it is the time from the last zero longitude crossing to the next (24 July 1820 - 2 July 2068).
   tropical_orbit_period_days                             REAL,                   -- The average time for the body to make one revolution about the Sun from one point in its seasonal orbit to the equivalent point (e.g. equinox to equinox) in days. For Earth, this equals exactly 1 year. Not known for Pluto.
@@ -164,22 +164,22 @@ CREATE TABLE planets
   sidereal_rotation_period_hrs                           REAL,                   -- The time for one rotation of the body on its axis relative to the fixed stars, in hours. A minus sign indicates retrograde (backwards relative to the Earth) rotation.
   obliquity_to_orbit_degrees                             REAL,                   -- The angle between the body's equator and the body's orbital plane, with north defined by the right-hand rule. (J2000)
   inclination_of_equator_degrees                         REAL,                   -- The angle between the equator and orbital plane with north defined as pole axis above (north of) the plane of the solar system, also denoted as axial tilt. (J2000)
-  apparent_diameter_from_earth_at_1_AU_s_of_arc          REAL,                   -- ?
-  max_apparent_diameter_from_earth_s_of_arc              REAL,                   -- ?
-  min_apparent_diameter_from_earth_s_of_arc              REAL,                   -- ?
-  mean_apparent_diameter_from_earth_s_of_arc             REAL,                   -- ?
-  mean_apparent_visual_magnitude_from_earth              REAL,                   -- ?
-  max_visual_magnitude                                   REAL,                   -- ?
+  apparent_diameter_from_earth_at_1_AU_s_of_arc          REAL,                   -- The apparent diameter of the body across its equator as seen from Earth at one Astronomical Unit, measured in arc seconds.
+  max_apparent_diameter_from_earth_s_of_arc              REAL,                   -- The apparent diameter of the body across its equator as seen from Earth at the maximum distance from Earth, measured in arc seconds.
+  min_apparent_diameter_from_earth_s_of_arc              REAL,                   -- The apparent diameter of the body across its equator as seen from Earth at the minimum distance from Earth, measured in arc seconds.
+  mean_apparent_diameter_from_earth_s_of_arc             REAL,                   -- The apparent diameter of the body across its equator as seen from Earth at the mean distance from Earth, measured in arc seconds.
+  mean_apparent_visual_magnitude_from_earth              REAL,                   -- The apparent visual magnitude of the body as seen from Earth.
+  max_visual_magnitude                                   REAL,                   -- The maximum visual magnitude of the body.
   longitude_of_ascending_node_degrees                    REAL,                   -- The longitude in a body's orbit at which it crosses the ecliptic plane with increasing latitude (i.e. crosses the ecliptic from south to north).
   longitude_of_perihelion_degrees                        REAL,                   -- The longitude in a body's orbit at which it reaches the point closest to the Sun.
   mean_longitude_degrees                                 REAL,                   -- The longitude a body was at in its orbit at 12:00 Universal (Greenwich) Time on January 1, 2000, also known as J2000 or Julian Day 2451545.0
-  north_pole_of_rotation_right_ascension                 VARCHAR(25),            -- ?
-  north_pole_of_rotation_declination                     VARCHAR(25),            -- ?
+  north_pole_of_rotation_right_ascension                 VARCHAR(25),            -- The angular distance of a particular point measured eastward along the celestial equator from the Sun at the March equinox to the point in question above the Earth.
+  north_pole_of_rotation_declination                     VARCHAR(25),            -- Declination of body on the celestial sphereints. Points north of the celestial equator have positive declinations, while those south have negative declinations.
   north_pole_of_rotation_reference_date                  VARCHAR(35),            -- Reference date of rotation measured in UTC. This string contains the ISO 8601 date format followed by the Julian Day number in parenthesis.
   magnetosphere_model                                    VARCHAR(50),            -- The model used for charting the magnetosphere
   dipole_field_strength_gauss_R_exp_3                    REAL,                   -- The strength of the dipole portion of the planetary magnetic field outside the planet in Gauss-R^3, where R is in units of planet radius. (Dividing by the distance R^3 gives the field in Gauss)
   dipole_tilt_to_rotational_axis_degrees                 REAL,                   -- Tilt of the dipole axis to the axis of rotation in degrees.
-  longitude_of_tilt_degrees                              REAL,                   -- ?
+  longitude_of_tilt_degrees                              REAL,                   -- The longitude of the tilt of the dipole axis to the axis of rotation in degrees.
   dipole_offset_R                                        REAL,                   -- The offset distance of the dipole center to the planet center in units of planet radius.
   surface_field_strength_1_R_gauss                       VARCHAR(25),            -- Range of total field strength at planet radius in Gauss.
   geomagnetic_poles_model                                VARCHAR(50),            -- The model used for charting the geomagnetic poles
@@ -222,7 +222,7 @@ INSERT INTO metadata
  )
    VALUES
  (1,           'metadata', 'metadata_id',
-    'Internally generated id for the primary key value.'
+   'Internally generated id for the primary key value.'
  );
 
 INSERT INTO metadata
@@ -231,7 +231,7 @@ INSERT INTO metadata
  )
    VALUES
  (2,           'metadata', 'table_name',
-    'The name of the table.'
+   'The name of the table.'
  );
 
 INSERT INTO metadata
@@ -240,7 +240,7 @@ INSERT INTO metadata
  )
    VALUES
  (3,           'metadata', 'column_name',
-    'The name of the column.'
+   'The name of the column.'
  );
 
 INSERT INTO metadata
@@ -249,7 +249,7 @@ INSERT INTO metadata
  )
    VALUES
  (4,           'metadata', 'meaning',
-    'The meaning of the data in that particular column in the table.'
+   'The meaning of the data in that particular column in the table.'
  );
 
 /************************************************ S T A R S *****************************************************************/
@@ -260,7 +260,7 @@ INSERT INTO metadata
  )
    VALUES
  (5,           'stars',    'star_id',
-    'Internally generated id for the primary key value.'
+   'Internally generated id for the primary key value.'
  );
 
 INSERT INTO metadata
@@ -269,7 +269,7 @@ INSERT INTO metadata
  )
    VALUES
  (6,           'stars',    'name',
-    'The name of the star.'
+   'The name of the star.'
  );
 
 INSERT INTO metadata
@@ -278,7 +278,7 @@ INSERT INTO metadata
  )
    VALUES
  (7,           'stars',    'discoverer',
-    'The person who discovered the star.'
+   'The person who discovered the star.'
  );
 
 INSERT INTO metadata
@@ -287,7 +287,7 @@ INSERT INTO metadata
  )
    VALUES
  (8,           'stars',    'dicovery_date',
-    'The date when the star has been discovered.'
+   'The date when the star has been discovered.'
  );
 
 INSERT INTO metadata
@@ -296,7 +296,7 @@ INSERT INTO metadata
  )
    VALUES
  (9,           'stars',    'mass_kg_10_exp_24',
-    'Mass of the body in 10^24 kilograms.'
+   'Mass of the body in 10^24 kilograms.'
  );
 
 INSERT INTO metadata
@@ -305,7 +305,7 @@ INSERT INTO metadata
  )
    VALUES
  (10,          'stars',    'gm_10_exp_6_km_exp_3_per_s_exp_2',
-    'Gravitational constant times the mass of the body in 10^6 kilometers^3 / seconds^2 (x 10^6 km^3/s^2).'
+   'Gravitational constant times the mass of the body in 10^6 kilometers^3 / seconds^2 (x 10^6 km^3/s^2).'
  );
 
 INSERT INTO metadata
@@ -314,7 +314,7 @@ INSERT INTO metadata
  )
    VALUES
  (11,          'stars',    'volume_10_exp_12_km_exp_3',
-    'Volume of the body in 10^12 km^3.'
+   'Volume of the body in 10^12 km^3.'
  );
 
 INSERT INTO metadata
@@ -323,7 +323,7 @@ INSERT INTO metadata
  )
    VALUES
  (12,          'stars',    'mean_volumetric_radius_km',
-    'Radius of a sphere with the same volume as the body.'
+   'Radius of a sphere with the same volume as the body.'
  );
 
 INSERT INTO metadata
@@ -332,7 +332,7 @@ INSERT INTO metadata
  )
    VALUES
  (13,          'stars',    'mean_density_kg_per_m_exp_3',
-    'Average density of the body (mass/volume) in kilograms/(meter^3).'
+   'Average density of the body (mass/volume) in kilograms/(meter^3).'
  );
 
 INSERT INTO metadata
@@ -341,7 +341,7 @@ INSERT INTO metadata
  )
    VALUES
  (14,          'stars',    'gravity_m_per_s_exp_2',
-    'Equatorial gravitational acceleration at the surface of the body or the 1 bar level, not including the effects of rotation, in meters/(second^2).'
+   'Equatorial gravitational acceleration at the surface of the body or the 1 bar level, not including the effects of rotation, in meters/(second^2).'
  );
 
 INSERT INTO metadata
@@ -350,7 +350,7 @@ INSERT INTO metadata
  )
    VALUES
  (15,          'stars',    'escape_velocity_km_per_s',
-    'Initial velocity required to escape the body''s gravitational pull in kilometers/second (at equator).'
+   'Initial velocity required to escape the body''s gravitational pull in kilometers/second (at equator).'
  );
 
 INSERT INTO metadata
@@ -359,7 +359,7 @@ INSERT INTO metadata
  )
    VALUES
  (16,          'stars',    'ellipticity',
-    'Flattening - The ratio (equatorial - polar radius)/(equatorial radius), dimensionless.'
+   'Flattening - The ratio (equatorial - polar radius)/(equatorial radius), dimensionless.'
  );
 
 INSERT INTO metadata
@@ -368,7 +368,7 @@ INSERT INTO metadata
  )
    VALUES
  (17,          'stars',    'moment_of_inertia_I_per_MR_exp_2',
-    'The moment of inertia of the body expressed as the rotational inertia divided by the body''s mass x radius^2, where radius^2 = {2(Requator^2) + Rpolar^2}/3. A hollow spherical shell has a moment of inertia of 2/3, a homogeneous sphere 0.4, dimensionless.'
+   'The moment of inertia of the body expressed as the rotational inertia divided by the body''s mass x radius^2, where radius^2 = {2(Requator^2) + Rpolar^2}/3. A hollow spherical shell has a moment of inertia of 2/3, a homogeneous sphere 0.4, dimensionless.'
  );
 
 INSERT INTO metadata
@@ -377,7 +377,7 @@ INSERT INTO metadata
  )
    VALUES
  (18,          'stars',    'vband_magnitude',
-    'V-band magnitude V(1,0) - The magnitude of the body in the V-band (0.549 micrometers) if it were one AU (1.496 x 10^8  kilometers) from the Earth at a phase angle of zero, dimensionless.'
+   'V-band magnitude V(1,0) - The magnitude of the body in the V-band (0.549 micrometers) if it were one AU (1.496 x 10^8  kilometers) from the Earth at a phase angle of zero, dimensionless.'
  );
 
 INSERT INTO metadata
@@ -386,7 +386,7 @@ INSERT INTO metadata
  )
    VALUES
  (19,          'stars',    'absolute_magnitude',
-    '?'
+   'The absolute magnitude of the body.'
  );
 
 INSERT INTO metadata
@@ -395,7 +395,7 @@ INSERT INTO metadata
  )
    VALUES
  (20,          'stars',    'luminosity_10_exp_24_j_per_s',
-    'Body''s luminosity in 10^24 Joule per second.'
+   'Body''s luminosity in 10^24 Joule per second.'
  );
 
 INSERT INTO metadata
@@ -404,7 +404,7 @@ INSERT INTO metadata
  )
    VALUES
  (21,          'stars',    'mass_conversion_rate_10_exp_6_kg_per_s',
-    '?'
+   'The mass that''s converted into energy in 10^6kg per second.'
  );
 
 INSERT INTO metadata
@@ -413,7 +413,7 @@ INSERT INTO metadata
  )
    VALUES
  (22,          'stars',    'mean_energy_production_10_exp_minus_3_J_per_kg_s',
-    '?'
+   'The mean energy production of the body in 10^-3 J/kg per second.'
  );
 
 INSERT INTO metadata
@@ -422,7 +422,7 @@ INSERT INTO metadata
  )
    VALUES
  (23,          'stars',    'surface_emission_10_exp_6_J_per_m_exp_2_s',
-    '?'
+   'Body''s surface energy emission in 10^6 Joule/m2 per seconds.'
  );
 
 INSERT INTO metadata
@@ -431,7 +431,7 @@ INSERT INTO metadata
  )
    VALUES
  (24,          'stars',    'spectral_type',
-    '?'
+   'The spectral type of the star, see https://lweb.cfa.harvard.edu/~pberlind/atlas/htmls/note.html for reference.'
  );
 
 INSERT INTO metadata
@@ -440,7 +440,7 @@ INSERT INTO metadata
  )
    VALUES
  (25,          'stars',    'central_pressure_10_exp_11_bar',
-    'Pressue at the center of the body in 10^11 bar.'
+   'Pressue at the center of the body in 10^11 bar.'
  );
 
 INSERT INTO metadata
@@ -449,7 +449,7 @@ INSERT INTO metadata
  )
    VALUES
  (26,          'stars',    'central_temperature_10_exp_7_K',
-    'Temperature at the center of the body in 10^7 Kelvin.'
+   'Temperature at the center of the body in 10^7 Kelvin.'
  );
 
 INSERT INTO metadata
@@ -458,7 +458,7 @@ INSERT INTO metadata
  )
    VALUES
  (27,          'stars',    'central_density_10_exp_5_kg_per_m_exp_3',
-    'Density at the center fo the body in 10^5 kilograms per meters^3.'
+   'Density at the center fo the body in 10^5 kilograms per meters^3.'
  );
 
 INSERT INTO metadata
@@ -467,7 +467,7 @@ INSERT INTO metadata
  )
    VALUES
  (28,          'stars',    'sidereal_rotation_period_hrs',
-    'Time for one rotation of the body on its axis relative to the fixed stars, in earth hours. A minus sign indicates retrograde (backwards relative to the Earth) rotation.'
+   'Time for one rotation of the body on its axis relative to the fixed stars, in earth hours. A minus sign indicates retrograde (backwards relative to the Earth) rotation.'
  );
 
 INSERT INTO metadata
@@ -476,7 +476,7 @@ INSERT INTO metadata
  )
    VALUES
  (29,          'stars',    'obliquity_to_ecliptic_degrees',
-    '?'
+    'Inclination of the body''s equator with respect to the ecliptic.'
  );
 
 INSERT INTO metadata
@@ -485,7 +485,7 @@ INSERT INTO metadata
  )
    VALUES
  (30,          'stars',    'speed_relative_to_nearby_stars_km_per_s',
-    'Body''s speed relative to nearby stars in km/s.'
+   'Body''s speed relative to nearby stars in km/s.'
  );
 
 INSERT INTO metadata
@@ -494,7 +494,7 @@ INSERT INTO metadata
  )
    VALUES
  (31,          'stars',    'north_pole_of_rotation_right_ascension',
-    '?'
+   'The angular distance of a particular point measured eastward along the celestial equator from the Sun at the March equinox to the point in question above the Earth.'
  );
 
 INSERT INTO metadata
@@ -503,7 +503,7 @@ INSERT INTO metadata
  )
    VALUES
  (32,          'stars',    'north_pole_of_rotation_declination',
-    '?'
+   'Declination of body on the celestial sphereints. Points north of the celestial equator have positive declinations, while those south have negative declinations.'
  );
 
 INSERT INTO metadata
@@ -512,7 +512,7 @@ INSERT INTO metadata
  )
    VALUES
  (33,          'stars',    'north_pole_of_rotation_reference_date',
-    'Reference date of rotation measured in UTC. This string contains the ISO 8601 date format followed by the Julian Day number in parenthesis.'
+   'Reference date of rotation measured in UTC. This string contains the ISO 8601 date format followed by the Julian Day number in parenthesis.'
  );
 
 INSERT INTO metadata
@@ -521,7 +521,7 @@ INSERT INTO metadata
  )
    VALUES
  (34,          'stars',    'apparent_diameter_from_earth_at_1_AU_s_of_arc',
-    '?'
+   'The apparent diameter of the body across its equator as seen from Earth at one Astronomical Unit, measured in arc seconds.'
  );
 
 INSERT INTO metadata
@@ -530,7 +530,7 @@ INSERT INTO metadata
  )
    VALUES
  (35,          'stars',    'max_apparent_diameter_from_earth_s_of_arc',
-    '?'
+   'The apparent diameter of the body across its equator as seen from Earth at the maximum distance from Earth, measured in arc seconds.'
  );
 
 INSERT INTO metadata
@@ -539,7 +539,7 @@ INSERT INTO metadata
  )
    VALUES
  (36,          'stars',    'min_apparent_diameter_from_earth_s_of_arc',
-    '?'
+   'The apparent diameter of the body across its equator as seen from Earth at the minimum distance from Earth, measured in arc seconds.'
  );
 
 INSERT INTO metadata
@@ -548,7 +548,7 @@ INSERT INTO metadata
  )
    VALUES
  (37,          'stars',    'mean_distance_from_earth_10_exp_6_km',
-    'Mean distance from earth in 10^6 kilometers.'
+   'Mean distance from earth in 10^6 kilometers.'
  );
 
 INSERT INTO metadata
@@ -557,7 +557,7 @@ INSERT INTO metadata
  )
    VALUES
  (38,          'stars',    'min_distance_from_earth_10_exp_6_km',
-    'Minimum distance from earth in 10^6 kilometers.'
+   'Minimum distance from earth in 10^6 kilometers.'
  );
 
 INSERT INTO metadata
@@ -566,7 +566,7 @@ INSERT INTO metadata
  )
    VALUES
  (39,          'stars',    'max_distance_from_earth_10_exp_6_km',
-    'Maximum distance from earth in 10^6 kilometers.'
+   'Maximum distance from earth in 10^6 kilometers.'
  );
 
 INSERT INTO metadata
@@ -575,7 +575,7 @@ INSERT INTO metadata
  )
    VALUES
  (40,          'stars',    'min_magentic_field_strength_polar_field_gauss',
-    'Minimum magnetic field strength at the polar field in Gauss.'
+   'Minimum magnetic field strength at the polar field in Gauss.'
  );
 
 INSERT INTO metadata
@@ -584,7 +584,7 @@ INSERT INTO metadata
  )
    VALUES
  (41,          'stars',    'max_magentic_field_strength_polar_field_gauss',
-    'Maximum magnetic field strength at the polar field in Gauss.'
+   'Maximum magnetic field strength at the polar field in Gauss.'
  );
 
 INSERT INTO metadata
@@ -593,7 +593,7 @@ INSERT INTO metadata
  )
    VALUES
  (42,          'stars',    'magentic_strength_sunspots_gauss',
-    'Magnetic field strength of sunspots in Gauss.'
+   'Magnetic field strength of sunspots in Gauss.'
  );
 
 INSERT INTO metadata
@@ -602,7 +602,7 @@ INSERT INTO metadata
  )
    VALUES
  (43,          'stars',    'min_magentic_strength_prominences_gauss',
-    'Minimum magnetic field strength of prominences in Gauss.'
+   'Minimum magnetic field strength of prominences in Gauss.'
  );
 
 INSERT INTO metadata
@@ -611,7 +611,7 @@ INSERT INTO metadata
  )
    VALUES
  (44,          'stars',    'max_magentic_strength_prominences_gauss',
-    'Maximum magnetic field strength of prominences in Gauss.'
+   'Maximum magnetic field strength of prominences in Gauss.'
  );
 
 INSERT INTO metadata
@@ -620,7 +620,7 @@ INSERT INTO metadata
  )
    VALUES
  (45,          'stars',    'magentic_strength_chromospheric_plages_gauss',
-    'Magnetic field strength of chromospheric plages in Gauss.'
+   'Magnetic field strength of chromospheric plages in Gauss.'
  );
 
 INSERT INTO metadata
@@ -629,7 +629,7 @@ INSERT INTO metadata
  )
    VALUES
  (46,          'stars',    'magentic_strength_bright_chromospheric_network_gauss',
-    'Magnetic field strength of bright chromospheric network in Gauss.'
+   'Magnetic field strength of bright chromospheric network in Gauss.'
  );
 
 INSERT INTO metadata
@@ -638,7 +638,7 @@ INSERT INTO metadata
  )
    VALUES
  (47,          'stars',    'magentic_strength_ephemeral_active_regions_gauss',
-    'Magnetic field strength of ephemeral (unipolar) active regions in Gauss.'
+   'Magnetic field strength of ephemeral (unipolar) active regions in Gauss.'
  );
 
 INSERT INTO metadata
@@ -647,7 +647,7 @@ INSERT INTO metadata
  )
    VALUES
  (48,          'stars',    'surface_gas_pressure_top_of_photosphere_mb',
-    'Atmospheric pressure at the top of the photosphere surface in millibars.'
+   'Atmospheric pressure at the top of the photosphere surface in millibars.'
  );
 
 INSERT INTO metadata
@@ -656,7 +656,7 @@ INSERT INTO metadata
  )
    VALUES
  (49,          'stars',    'surface_gas_pressure_bottom_of_photosphere_mb',
-    'Atmospheric pressure at the bottom of photosphere surface in millibars.'
+   'Atmospheric pressure at the bottom of photosphere surface in millibars.'
  );
 
 INSERT INTO metadata
@@ -665,7 +665,7 @@ INSERT INTO metadata
  )
    VALUES
  (50,          'stars',    'effective_temperature_K',
-    '?'
+    'The effective temperature of a body is the temperature a black body of the same size must have to yield the same total emissive power, measured in Kelvin.'
  );
 
 INSERT INTO metadata
@@ -674,7 +674,7 @@ INSERT INTO metadata
  )
    VALUES
  (51,          'stars',    'temperature_at_top_of_photosphere_K',
-    'Temperature at the top of the photosphere in Kelvin.'
+   'Temperature at the top of the photosphere in Kelvin.'
  );
 
 INSERT INTO metadata
@@ -683,7 +683,7 @@ INSERT INTO metadata
  )
    VALUES
  (52,          'stars',    'temperature_at_bottom_of_photosphere_K',
-    'Temperature at the bottom of the photosphere in Kelvin.'
+   'Temperature at the bottom of the photosphere in Kelvin.'
  );
 
 INSERT INTO metadata
@@ -692,7 +692,7 @@ INSERT INTO metadata
  )
    VALUES
  (53,          'stars',    'temperature_at_top_of_chromosphere_K',
-    'Temperature at the top of the chromosphere in Kelvin.'
+   'Temperature at the top of the chromosphere in Kelvin.'
  );
 
 INSERT INTO metadata
@@ -701,7 +701,7 @@ INSERT INTO metadata
  )
    VALUES
  (54,          'stars',    'photosphere_thickness_km',
-    'Photosphere thickness in kilometers.'
+   'Photosphere thickness in kilometers.'
  );
 
 INSERT INTO metadata
@@ -710,7 +710,7 @@ INSERT INTO metadata
  )
    VALUES
  (55,          'stars',    'chromosphere_thickness_km',
-    'Chromosphere thickness in kilometers.'
+   'Chromosphere thickness in kilometers.'
  );
 
 INSERT INTO metadata
@@ -719,7 +719,7 @@ INSERT INTO metadata
  )
    VALUES
  (56,          'stars',    'sun_spot_cycle_yrs',
-    'Cycle of sun spots in Earth years.'
+   'Cycle of sun spots in Earth years.'
  );
 
 INSERT INTO metadata
@@ -728,7 +728,7 @@ INSERT INTO metadata
  )
    VALUES
  (57,          'stars',    'photosphere_composition',
-    'Composition of photosphere elements in JSON format.'
+   'Composition of photosphere elements in JSON format.'
  );
 
 /************************************************ P L A N E T S *************************************************************/
@@ -739,7 +739,7 @@ INSERT INTO metadata
  )
    VALUES
  (58,          'planets',  'planet_id',
-    'Internally generated id for the primary key value.'
+   'Internally generated id for the primary key value.'
  );
 
 INSERT INTO metadata
@@ -748,7 +748,7 @@ INSERT INTO metadata
  )
    VALUES
  (59,          'planets',  'name',
-    'The name of the planet.'
+   'The name of the planet.'
  );
 
 INSERT INTO metadata
@@ -757,7 +757,7 @@ INSERT INTO metadata
  )
    VALUES
  (60,          'planets',  'star_id',
-    'The ID of the star to which the planet belongs.'
+   'The ID of the star to which the planet belongs.'
  );
 
 INSERT INTO metadata
@@ -766,7 +766,7 @@ INSERT INTO metadata
  )
    VALUES
  (61,          'planets',  'discoverer',
-    'The person who discovered the planet.'
+   'The person who discovered the planet.'
  );
 
 INSERT INTO metadata
@@ -775,7 +775,7 @@ INSERT INTO metadata
  )
    VALUES
  (62,          'planets',  'discovery_date',
-    'The date when the planet has been discovered.'
+   'The date when the planet has been discovered.'
  );
 
 INSERT INTO metadata
@@ -784,7 +784,7 @@ INSERT INTO metadata
  )
    VALUES
  (63,          'planets',  'mass_kg_10_exp_24',
-    'Mass of the body in 10^24 kilograms.'
+   'Mass of the body in 10^24 kilograms.'
  );
 
 INSERT INTO metadata
@@ -793,7 +793,7 @@ INSERT INTO metadata
  )
    VALUES
  (64,          'planets',  'volume_10_exp_10_km_exp_3',
-    'Volume of the body in 10^12 km^3.'
+   'Volume of the body in 10^12 km^3.'
  );
 
 INSERT INTO metadata
@@ -802,7 +802,7 @@ INSERT INTO metadata
  )
    VALUES
  (65,          'planets',  'equatorial_radius_km',
-    'Radius of the body at the equator in kilometers.'
+   'Radius of the body at the equator in kilometers.'
  );
 
 INSERT INTO metadata
@@ -811,7 +811,7 @@ INSERT INTO metadata
  )
    VALUES
  (66,          'planets',  'core_radius_km',
-    'Radius of the planet core in kilometers.'
+   'Radius of the planet core in kilometers.'
  );
 
 INSERT INTO metadata
@@ -820,7 +820,7 @@ INSERT INTO metadata
  )
    VALUES
  (67,          'planets',  'polar_radius_km',
-    'Radius of the body at the poles in kilometers.'
+   'Radius of the body at the poles in kilometers.'
  );
 
 INSERT INTO metadata
@@ -829,7 +829,7 @@ INSERT INTO metadata
  )
    VALUES
  (68,          'planets',  'mean_volumetric_radius_km',
-    'Radius of a sphere with the same volume as the body.'
+   'Radius of a sphere with the same volume as the body.'
  );
 
 INSERT INTO metadata
@@ -838,7 +838,7 @@ INSERT INTO metadata
  )
    VALUES
  (69,          'planets',  'diameter_km',
-    'The planetary diameter used is two times the volumetric mean radius. For Venus, Jupiter, Saturn, Uranus, and Neptune, diameter is approximately to the visible cloud tops.'
+   'The planetary diameter used is two times the volumetric mean radius. For Venus, Jupiter, Saturn, Uranus, and Neptune, diameter is approximately to the visible cloud tops.'
  );
 
 INSERT INTO metadata
@@ -847,7 +847,7 @@ INSERT INTO metadata
  )
    VALUES
  (70,          'planets',  'number_of_moons',
-    'The number of moons orbiting the planet, as certified by the IAU (International Astronomical Union).'
+   'The number of moons orbiting the planet, as certified by the IAU (International Astronomical Union).'
  );
 
 INSERT INTO metadata
@@ -856,7 +856,7 @@ INSERT INTO metadata
  )
    VALUES
  (71,          'planets',  'has_ring_system',
-    'This tells whether a planet has a set of rings around it, Saturn being the most obvious example.'
+   'This tells whether a planet has a set of rings around it, Saturn being the most obvious example.'
  );
 
 INSERT INTO metadata
@@ -865,7 +865,7 @@ INSERT INTO metadata
  )
    VALUES
  (72,          'planets',  'has_global_magnetic_field',
-    'Indicates whether the planet has a measurable large-scale magnetic field. Mars has localized regional magnetic fields but no global field.'
+   'Indicates whether the planet has a measurable large-scale magnetic field. Mars has localized regional magnetic fields but no global field.'
  );
 
 INSERT INTO metadata
@@ -874,7 +874,7 @@ INSERT INTO metadata
  )
    VALUES
  (73,          'planets',  'rotation_period_hrs',
-    'The time it takes for the planet to complete one rotation relative to the fixed background stars (not relative to the Sun) in hours. Negative numbers indicate retrograde (backwards relative to the Earth) rotation.'
+   'The time it takes for the planet to complete one rotation relative to the fixed background stars (not relative to the Sun) in hours. Negative numbers indicate retrograde (backwards relative to the Earth) rotation.'
  );
 
 INSERT INTO metadata
@@ -883,7 +883,7 @@ INSERT INTO metadata
  )
    VALUES
  (74,          'planets',  'length_of_day_hrs',
-    'The average time in hours for the Sun to move from the noon position in the sky at a point on the equator back to the same position.'
+   'The average time in hours for the Sun to move from the noon position in the sky at a point on the equator back to the same position.'
  );
 
 INSERT INTO metadata
@@ -892,7 +892,7 @@ INSERT INTO metadata
  )
    VALUES
  (75,          'planets',  'ellipticity',
-    'Flattening - The ratio (equatorial - polar radius)/(equatorial radius), dimensionless.'
+   'Flattening - The ratio (equatorial - polar radius)/(equatorial radius), dimensionless.'
  );
 
 INSERT INTO metadata
@@ -901,7 +901,7 @@ INSERT INTO metadata
  )
    VALUES
  (76,          'planets',  'distance_from_sun_10_exp_6_km',
-    'The average distance from the planet to the Sun in millions of kilometers, also known as the semi-major axis. All planets have orbits which are elliptical, not perfectly circular, so there is a point in the orbit at which the planet is closest to the Sun, the perihelion, and a point furthest from the Sun, the aphelion. The average distance from the Sun is midway between these two values. The average distance from the Earth to the Sun is defined as 1 Astronomical Unit (AU), so the ratio table gives this distance in AU.'
+   'The average distance from the planet to the Sun in millions of kilometers, also known as the semi-major axis. All planets have orbits which are elliptical, not perfectly circular, so there is a point in the orbit at which the planet is closest to the Sun, the perihelion, and a point furthest from the Sun, the aphelion. The average distance from the Sun is midway between these two values. The average distance from the Earth to the Sun is defined as 1 Astronomical Unit (AU), so the ratio table gives this distance in AU.'
  );
 
 INSERT INTO metadata
@@ -910,7 +910,7 @@ INSERT INTO metadata
  )
    VALUES
  (77,          'planets',  'mean_distance_from_earth_10_exp_6_km',
-    'Approximate values for the minimum and maximum distances of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020).'
+   'Approximate values for the minimum and maximum distances of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020).'
  );
 
 INSERT INTO metadata
@@ -919,7 +919,7 @@ INSERT INTO metadata
  )
    VALUES
  (78,          'planets',  'min_distance_from_earth_10_exp_6_km',
-    'Approximate value for the minimum distance of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020).'
+   'Approximate value for the minimum distance of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020).'
  );
 
 INSERT INTO metadata
@@ -928,7 +928,7 @@ INSERT INTO metadata
  )
    VALUES
  (79,          'planets',  'max_distance_from_earth_10_exp_6_km',
-    'Approximate value for the maximum distances of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020).'
+   'Approximate value for the maximum distances of the planets from Earth. Orbits fluctuate over time, these values are calculated from the mean orbital elements for J2000 250 year fits and the current orbits referenced to Julian Date 2459000.5 (11 June 2020).'
  );
 
 INSERT INTO metadata
@@ -937,7 +937,7 @@ INSERT INTO metadata
  )
    VALUES
  (80,          'planets',  'mean_density_kg_per_m_exp_3',
-    'Average density of the body (mass/volume) in kilograms/(meter^3).'
+   'Average density of the body (mass/volume) in kilograms/(meter^3).'
  );
 
 INSERT INTO metadata
@@ -946,7 +946,7 @@ INSERT INTO metadata
  )
    VALUES
  (81,          'planets',  'gravity_m_per_s_exp_2',
-    'Equatorial gravitational acceleration at the surface of the body or the 1 bar level, not including the effects of rotation, in meters/(second^2).'
+   'Equatorial gravitational acceleration at the surface of the body or the 1 bar level, not including the effects of rotation, in meters/(second^2).'
  );
 
 INSERT INTO metadata
@@ -955,7 +955,7 @@ INSERT INTO metadata
  )
    VALUES
  (82,          'planets',  'acceleration_m_per_s_exp_2',
-    'Effective equatorial gravitational acceleration at the surface of the body or the 1 bar level, including the effects of rotation, in meters/(second^2).'
+   'Effective equatorial gravitational acceleration at the surface of the body or the 1 bar level, including the effects of rotation, in meters/(second^2).'
  );
 
 INSERT INTO metadata
@@ -964,7 +964,7 @@ INSERT INTO metadata
  )
    VALUES
  (83,          'planets',  'escape_velocity_km_per_s',
-    'Initial velocity required to escape the body''s gravitational pull in kilometers/second (at equator).'
+   'Initial velocity required to escape the body''s gravitational pull in kilometers/second (at equator).'
  );
 
 INSERT INTO metadata
@@ -973,7 +973,7 @@ INSERT INTO metadata
  )
    VALUES
  (84,          'planets',  'mean_temperature_K',
-    'Mean temperature of the body over the entire surface in Kelvin.'
+   'Mean temperature of the body over the entire surface in Kelvin.'
  );
 
 INSERT INTO metadata
@@ -982,7 +982,7 @@ INSERT INTO metadata
  )
    VALUES
  (85,          'planets',  'mean_temperature_C',
-    'Mean temperature of the body over the entire surface in Celsius.'
+   'Mean temperature of the body over the entire surface in Celsius.'
  );
 
 INSERT INTO metadata
@@ -991,7 +991,7 @@ INSERT INTO metadata
  )
    VALUES
  (86,          'planets',  'surface_pressure_bars',
-    'Atmospheric pressure at the surface, in bars.'
+   'Atmospheric pressure at the surface, in bars.'
  );
 
 INSERT INTO metadata
@@ -1000,7 +1000,7 @@ INSERT INTO metadata
  )
    VALUES
  (87,          'planets',  'gm_10_exp_6_km_exp_3_per_s_exp_2',
-    'Gravitational constant times the mass of the body in 10^6 kilometers^3/seconds^2.'
+   'Gravitational constant times the mass of the body in 10^6 kilometers^3/seconds^2.'
  );
 
 INSERT INTO metadata
@@ -1009,7 +1009,7 @@ INSERT INTO metadata
  )
    VALUES
  (88,          'planets',  'bond_albedo',
-    'The fraction of incident solar radiation reflected back into space without absorption, dimensionless. Also called planetary albedo.'
+   'The fraction of incident solar radiation reflected back into space without absorption, dimensionless. Also called planetary albedo.'
  );
 
 INSERT INTO metadata
@@ -1018,7 +1018,7 @@ INSERT INTO metadata
  )
    VALUES
  (89,          'planets',  'geometric_albedo',
-    'The ratio of the body''s brightness at a phase angle of zero to the brightness of a perfectly diffusing disk with the same position and apparent size, dimensionless. V-band (0.549 micrometers). Earth is highly variable.'
+   'The ratio of the body''s brightness at a phase angle of zero to the brightness of a perfectly diffusing disk with the same position and apparent size, dimensionless. V-band (0.549 micrometers). Earth is highly variable.'
  );
 
 INSERT INTO metadata
@@ -1027,7 +1027,7 @@ INSERT INTO metadata
  )
    VALUES
  (90,          'planets',  'vband_magnitude',
-    'The magnitude of the body in the V-band (0.549 micrometers) if it were one AU (1.496 x 10^8  kilometers) from the Earth at a phase angle of zero, dimensionless.'
+   'The magnitude of the body in the V-band (0.549 micrometers) if it were one AU (1.496 x 10^8  kilometers) from the Earth at a phase angle of zero, dimensionless.'
  );
 
 INSERT INTO metadata
@@ -1036,7 +1036,7 @@ INSERT INTO metadata
  )
    VALUES
  (91,          'planets',  'solar_irradiance_W_per_m_exp_2',
-    'Solar energy on the body in Watts/(meter^2).'
+   'Solar energy on the body in Watts/(meter^2).'
  );
 
 INSERT INTO metadata
@@ -1045,7 +1045,7 @@ INSERT INTO metadata
  )
    VALUES
  (92,          'planets',  'black_body_temperature_K',
-    'Equivalent black body temperature is the surface temperature the body would have if it were in radiative equilibrium and had no atmosphere, but the same albedo, in Kelvin.'
+   'Equivalent black body temperature is the surface temperature the body would have if it were in radiative equilibrium and had no atmosphere, but the same albedo, in Kelvin.'
  );
 
 INSERT INTO metadata
@@ -1054,7 +1054,7 @@ INSERT INTO metadata
  )
    VALUES
  (93,          'planets',  'topographic_range_km',
-    'Difference in elevation between the highest and lowest points on the planet''s surface, in kilometers.'
+   'Difference in elevation between the highest and lowest points on the planet''s surface, in kilometers.'
  );
 
 INSERT INTO metadata
@@ -1063,7 +1063,7 @@ INSERT INTO metadata
  )
    VALUES
  (94,          'planets',  'moment_of_inertia_I_per_MR_exp_2',
-    'The moment of inertia of the body expressed as the rotational inertia divided by the body''s mass x radius^2, where radius^2 = {2(Requator^2) + Rpolar^2}/3. A hollow spherical shell has a moment of inertia of 2/3, a homogeneous sphere 0.4, dimensionless.'
+   'The moment of inertia of the body expressed as the rotational inertia divided by the body''s mass x radius^2, where radius^2 = {2(Requator^2) + Rpolar^2}/3. A hollow spherical shell has a moment of inertia of 2/3, a homogeneous sphere 0.4, dimensionless.'
  );
 
 INSERT INTO metadata
@@ -1072,7 +1072,7 @@ INSERT INTO metadata
  )
    VALUES
  (95,          'planets',  'J_2_10_exp_minus_6',
-    'The ratio of the difference in the moments of inertia (rotational vs polar) to the mass of the body times the radius^2,(C-A)/(M R^2), x 10^-6, dimensionless.'
+   'The ratio of the difference in the moments of inertia (rotational vs polar) to the mass of the body times the radius^2,(C-A)/(M R^2), x 10^-6, dimensionless.'
  );
 
 INSERT INTO metadata
@@ -1081,7 +1081,7 @@ INSERT INTO metadata
  )
    VALUES
  (96,          'planets',  'semimajor_axis_au',
-    '?'
+   'Approximate mean distance from the Sun (or other central body in the case of satellites) from center to center in Astronomical Units.'
  );
 
 
@@ -1091,7 +1091,7 @@ INSERT INTO metadata
  )
    VALUES
  (97,          'planets',  'semimajor_axis_10_exp_6_km',
-    'Approximate mean distance from the Sun from center to center in 10^6 kilometers.'
+   'Approximate mean distance from the Sun from center to center in 10^6 kilometers.'
  );
 
 INSERT INTO metadata
@@ -1100,7 +1100,7 @@ INSERT INTO metadata
  )
    VALUES
  (98,          'planets',  'sidereal_orbit_period_days',
-    'The time it takes the body to make one revolution about the Sun relative to the fixed stars in days. For Pluto, it is the time from the last zero longitude crossing to the next (24 July 1820 - 2 July 2068).'
+   'The time it takes the body to make one revolution about the Sun relative to the fixed stars in days. For Pluto, it is the time from the last zero longitude crossing to the next (24 July 1820 - 2 July 2068).'
  );
 
 INSERT INTO metadata
@@ -1109,7 +1109,7 @@ INSERT INTO metadata
  )
    VALUES
  (99,          'planets',  'tropical_orbit_period_days',
-    'The average time for the body to make one revolution about the Sun from one point in its seasonal orbit to the equivalent point (e.g. equinox to equinox) in days. For Earth, this equals exactly 1 year. Not known for Pluto.'
+   'The average time for the body to make one revolution about the Sun from one point in its seasonal orbit to the equivalent point (e.g. equinox to equinox) in days. For Earth, this equals exactly 1 year. Not known for Pluto.'
  );
 
 INSERT INTO metadata
@@ -1118,7 +1118,7 @@ INSERT INTO metadata
  )
    VALUES
  (100,         'planets',  'perihelion_10_exp_6_km',
-    'The point in a body''s orbit closest to the Sun, in 10^6 kilometers.'
+   'The point in a body''s orbit closest to the Sun, in 10^6 kilometers.'
  );
 
 INSERT INTO metadata
@@ -1127,7 +1127,7 @@ INSERT INTO metadata
  )
    VALUES
  (101,         'planets',  'aphelion_10_exp_6_km',
-    'The point in a body''s orbit furthest from the Sun, in 10^6 kilometers.'
+   'The point in a body''s orbit furthest from the Sun, in 10^6 kilometers.'
  );
 
 INSERT INTO metadata
@@ -1136,7 +1136,7 @@ INSERT INTO metadata
  )
    VALUES
  (102,         'planets',  'synodic_period_days',
-    'The time interval between similar configurations in the orbit (e.g. opposition) of the body and Earth, in days.'
+   'The time interval between similar configurations in the orbit (e.g. opposition) of the body and Earth, in days.'
  );
 
 INSERT INTO metadata
@@ -1145,7 +1145,7 @@ INSERT INTO metadata
  )
    VALUES
  (103,         'planets',  'orbital_period_days',
-    'The time in Earth days for a planet to orbit the Sun from one vernal equinox to the next. Also known as the tropical orbit period, this is equal to a year on Earth. For Pluto, the tropical orbit period is not well known, the sidereal orbit period is used.'
+   'The time in Earth days for a planet to orbit the Sun from one vernal equinox to the next. Also known as the tropical orbit period, this is equal to a year on Earth. For Pluto, the tropical orbit period is not well known, the sidereal orbit period is used.'
  );
 
 INSERT INTO metadata
@@ -1154,7 +1154,7 @@ INSERT INTO metadata
  )
    VALUES
  (104,         'planets',  'mean_orbital_velocity_km_per_s',
-    'The average speed of the body in elliptical orbit, in kilometers/second.'
+   'The average speed of the body in elliptical orbit, in kilometers/second.'
  );
 
 INSERT INTO metadata
@@ -1163,7 +1163,7 @@ INSERT INTO metadata
  )
    VALUES
  (105,         'planets',  'max_orbital_velocity_km_per_s',
-    'Maximum orbital velocity, at perihelion, in kilometers/second.'
+   'Maximum orbital velocity, at perihelion, in kilometers/second.'
  );
 
 INSERT INTO metadata
@@ -1172,7 +1172,7 @@ INSERT INTO metadata
  )
    VALUES
  (106,         'planets',  'min_orbital_velocity_km_per_s',
-    'Minimum orbital velocity, at aphelion, in kilometers/second.'
+   'Minimum orbital velocity, at aphelion, in kilometers/second.'
  );
 
 INSERT INTO metadata
@@ -1181,7 +1181,7 @@ INSERT INTO metadata
  )
    VALUES
  (107,         'planets',  'orbital_inclination_degrees',
-    'The inclination of the orbit to the ecliptic, in degrees.'
+   'The inclination of the orbit to the ecliptic, in degrees.'
  );
 
 INSERT INTO metadata
@@ -1190,7 +1190,7 @@ INSERT INTO metadata
  )
    VALUES
  (108,         'planets',  'orbital_eccentricity',
-    'A measure of the circularity of the orbit, equal to (aphelion - perihelion distance)/(2 x semi-major axis). For a circular orbit eccentricity = 0. Dimensionless.'
+   'A measure of the circularity of the orbit, equal to (aphelion - perihelion distance)/(2 x semi-major axis). For a circular orbit eccentricity = 0. Dimensionless.'
  );
 
 INSERT INTO metadata
@@ -1199,7 +1199,7 @@ INSERT INTO metadata
  )
    VALUES
  (109,         'planets',  'sidereal_rotation_period_hrs',
-    'The time for one rotation of the body on its axis relative to the fixed stars, in hours. A minus sign indicates retrograde (backwards relative to the Earth) rotation.'
+   'The time for one rotation of the body on its axis relative to the fixed stars, in hours. A minus sign indicates retrograde (backwards relative to the Earth) rotation.'
  );
 
 INSERT INTO metadata
@@ -1208,7 +1208,7 @@ INSERT INTO metadata
  )
    VALUES
  (110,         'planets',  'obliquity_to_orbit_degrees',
-    'The angle between the body''s equator and the body''s orbital plane, with north defined by the right-hand rule. (J2000)'
+   'The angle between the body''s equator and the body''s orbital plane, with north defined by the right-hand rule. (J2000)'
  );
 
 INSERT INTO metadata
@@ -1217,7 +1217,7 @@ INSERT INTO metadata
  )
    VALUES
  (111,         'planets',  'inclination_of_equator_degrees',
-    'The angle between the equator and orbital plane with north defined as pole axis above (north of) the plane of the solar system, also denoted as axial tilt. (J2000)'
+   'The angle between the equator and orbital plane with north defined as pole axis above (north of) the plane of the solar system, also denoted as axial tilt. (J2000)'
  );
 
 INSERT INTO metadata
@@ -1226,7 +1226,7 @@ INSERT INTO metadata
  )
    VALUES
  (112,         'planets',  'apparent_diameter_from_earth_at_1_AU_s_of_arc',
-    '?'
+   'The apparent diameter of the body across its equator as seen from Earth at one Astronomical Unit, measured in arc seconds.'
  );
 
 INSERT INTO metadata
@@ -1235,7 +1235,7 @@ INSERT INTO metadata
  )
    VALUES
  (113,         'planets',  'max_apparent_diameter_from_earth_s_of_arc',
-    '?'
+   'The apparent diameter of the body across its equator as seen from Earth at the maximum distance from Earth, measured in arc seconds.'
  );
 
 INSERT INTO metadata
@@ -1244,7 +1244,7 @@ INSERT INTO metadata
  )
    VALUES
  (114,         'planets',  'min_apparent_diameter_from_earth_s_of_arc',
-    '?'
+   'The apparent diameter of the body across its equator as seen from Earth at the minimum distance from Earth, measured in arc seconds.'
  );
 
 INSERT INTO metadata
@@ -1253,7 +1253,7 @@ INSERT INTO metadata
  )
    VALUES
  (115,         'planets',  'mean_apparent_diameter_from_earth_s_of_arc',
-    '?'
+   'The apparent diameter of the body across its equator as seen from Earth at the mean distance from Earth, measured in arc seconds.'
  );
 
 INSERT INTO metadata
@@ -1262,7 +1262,7 @@ INSERT INTO metadata
  )
    VALUES
  (116,         'planets',  'mean_apparent_visual_magnitude_from_earth',
-    '?'
+   'The apparent visual magnitude of the body as seen from Earth.'
  );
 
 INSERT INTO metadata
@@ -1271,7 +1271,7 @@ INSERT INTO metadata
  )
    VALUES
  (117,         'planets',  'max_visual_magnitude',
-    '?'
+   'The maximum visual magnitude of the body.'
  );
 
 INSERT INTO metadata
@@ -1280,7 +1280,7 @@ INSERT INTO metadata
  )
    VALUES
  (118,         'planets',  'longitude_of_ascending_node_degrees',
-    'The longitude in a body''s orbit at which it crosses the ecliptic plane with increasing latitude (i.e. crosses the ecliptic from south to north).'
+   'The longitude in a body''s orbit at which it crosses the ecliptic plane with increasing latitude (i.e. crosses the ecliptic from south to north).'
  );
 
 INSERT INTO metadata
@@ -1289,7 +1289,7 @@ INSERT INTO metadata
  )
    VALUES
  (119,         'planets',  'longitude_of_perihelion_degrees',
-    'The longitude in a body''s orbit at which it reaches the point closest to the Sun.'
+   'The longitude in a body''s orbit at which it reaches the point closest to the Sun.'
  );
 
 INSERT INTO metadata
@@ -1298,7 +1298,7 @@ INSERT INTO metadata
  )
    VALUES
  (120,         'planets',  'mean_longitude_degrees',
-    'The longitude a body was at in its orbit at 12:00 Universal (Greenwich) Time on January 1, 2000, also known as J2000 or Julian Day 2451545.0'
+   'The longitude a body was at in its orbit at 12:00 Universal (Greenwich) Time on January 1, 2000, also known as J2000 or Julian Day 2451545.0'
  );
 
 INSERT INTO metadata
@@ -1307,7 +1307,7 @@ INSERT INTO metadata
  )
    VALUES
  (121,         'planets',  'north_pole_of_rotation_right_ascension',
-    '?'
+   'The angular distance of a particular point measured eastward along the celestial equator from the Sun at the March equinox to the point in question above the Earth.'
  );
 
 INSERT INTO metadata
@@ -1316,7 +1316,7 @@ INSERT INTO metadata
  )
    VALUES
  (122,         'planets',  'north_pole_of_rotation_declination',
-    '?'
+   'Declination of body on the celestial sphereints. Points north of the celestial equator have positive declinations, while those south have negative declinations.'
  );
 
 INSERT INTO metadata
@@ -1325,7 +1325,7 @@ INSERT INTO metadata
  )
    VALUES
  (123,         'planets',  'north_pole_of_rotation_reference_date',
-    'Reference date of rotation measured in UTC. This string contains the ISO 8601 date format followed by the Julian Day number in parenthesis.'
+   'Reference date of rotation measured in UTC. This string contains the ISO 8601 date format followed by the Julian Day number in parenthesis.'
  );
 
 INSERT INTO metadata
@@ -1334,7 +1334,7 @@ INSERT INTO metadata
  )
    VALUES
  (124,         'planets',  'magnetosphere_model',
-    'The model used for charting the magnetosphere.'
+   'The model used for charting the magnetosphere.'
  );
 
 INSERT INTO metadata
@@ -1343,7 +1343,7 @@ INSERT INTO metadata
  )
    VALUES
  (125,         'planets',  'dipole_field_strength_gauss_R_exp_3',
-    'The strength of the dipole portion of the planetary magnetic field outside the planet in Gauss-R^3, where R is in units of planet radius. (Dividing by the distance R^3 gives the field in Gauss)'
+   'The strength of the dipole portion of the planetary magnetic field outside the planet in Gauss-R^3, where R is in units of planet radius. (Dividing by the distance R^3 gives the field in Gauss)'
  );
 
 INSERT INTO metadata
@@ -1352,7 +1352,7 @@ INSERT INTO metadata
  )
    VALUES
  (126,         'planets',  'dipole_tilt_to_rotational_axis_degrees',
-    'Tilt of the dipole axis to the axis of rotation in degrees.'
+   'Tilt of the dipole axis to the axis of rotation in degrees.'
  );
 
 INSERT INTO metadata
@@ -1361,7 +1361,7 @@ INSERT INTO metadata
  )
    VALUES
  (127,         'planets',  'longitude_of_tilt_degrees',
-    '?'
+   'The longitude of the tilt of the dipole axis to the axis of rotation in degrees.'
  );
 
 INSERT INTO metadata
@@ -1370,7 +1370,7 @@ INSERT INTO metadata
  )
    VALUES
  (128,         'planets',  'dipole_offset_R',
-    'The offset distance of the dipole center to the planet center in units of planet radius.'
+   'The offset distance of the dipole center to the planet center in units of planet radius.'
  );
 
 INSERT INTO metadata
@@ -1379,7 +1379,7 @@ INSERT INTO metadata
  )
    VALUES
  (129,         'planets',  'surface_field_strength_1_R_gauss',
-    'Range of total field strength at planet radius in Gauss.'
+   'Range of total field strength at planet radius in Gauss.'
  );
 
 INSERT INTO metadata
@@ -1388,7 +1388,7 @@ INSERT INTO metadata
  )
    VALUES
  (130,         'planets',  'geomagnetic_poles_model',
-    'The model used for charting the geomagnetic poles.'
+   'The model used for charting the geomagnetic poles.'
  );
 
 INSERT INTO metadata
@@ -1397,7 +1397,7 @@ INSERT INTO metadata
  )
    VALUES
  (131,         'planets',  'latitude_geocentric_dipole_degrees',
-    'The latitude of the geocentric dipole.'
+   'The latitude of the geocentric dipole.'
  );
 
 INSERT INTO metadata
@@ -1406,7 +1406,7 @@ INSERT INTO metadata
  )
    VALUES
  (132,         'planets',  'longitude_geocentric_dipole_degrees',
-    'The longitude of the geocentric dipole.'
+   'The longitude of the geocentric dipole.'
  );
 
 INSERT INTO metadata
@@ -1415,7 +1415,7 @@ INSERT INTO metadata
  )
    VALUES
  (133,         'planets',  'latitude_magnetic_north_pole_degrees',
-    'The latitude of the magnetic north pole.'
+   'The latitude of the magnetic north pole.'
  );
 
 INSERT INTO metadata
@@ -1424,7 +1424,7 @@ INSERT INTO metadata
  )
    VALUES
  (134,         'planets',  'longitude_magnetic_north_pole_degrees',
-    'The longitude of the magnetic north pole.'
+   'The longitude of the magnetic north pole.'
  );
 
 INSERT INTO metadata
@@ -1433,7 +1433,7 @@ INSERT INTO metadata
  )
    VALUES
  (135,         'planets',  'atmosphere_composition',
-    'Composition of atmosphere elements in JSON format.'
+   'Composition of atmosphere elements in JSON format.'
  );
 
 /****************************************************************************************************************************/
