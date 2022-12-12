@@ -89,6 +89,10 @@ INSERT INTO employees (employee_id, first_name, last_name, job_title, manager_id
 INSERT INTO employees (employee_id, first_name, last_name, job_title, manager_id, hire_date, salary, commission, department_id)
   VALUES (1404, 'Mark', 'Powers', 'Associate', 1387, '2018-01-14', 1000, null, 3);
 
+/*********************************************/
+/***************** COMMIT ********************/
+/*********************************************/
+
 COMMIT;
 
 /*********************************************/
