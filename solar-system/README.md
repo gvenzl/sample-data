@@ -26,7 +26,7 @@ Table: metadata
 | metadata_id | numeric       | NO   | PRI | NULL    |       |
 | table_name  | varchar(13)   | NO   |     | NULL    |       |
 | column_name | varchar(52)   | NO   |     | NULL    |       |
-| meaning     | varchar(4000) | NO   |     | NULL    |       |
+| meaning     | varchar(4000) | YES  |     | NULL    |       |
 +-------------+---------------+------+-----+---------+-------+
 ```
 
@@ -193,7 +193,11 @@ See `metadata` table contents.
 
 | File name | Description |
 | --------- | ------------|
+| [install.oracle.sql](install.oracle.sql) | SQL file to install this data set in an Oracle database. |
 | [install.sql](install.sql) | SQL file to install this data set in a database. |
+| [metadata.csv](metadata.csv) | Comma separated file with metadata. |
+| [planets.csv](planets.csv) | Comma separated file with planet data. |
+| [stars.csv](stars.csv) | Comma separated file with star data. |
 | [uninstall.sql](uninstall.sql) | SQL file to uninstall this data set from a database. |
 
 ## Database install instructions
