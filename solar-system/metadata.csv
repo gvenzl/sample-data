@@ -7,7 +7,7 @@ METADATA_ID,TABLE_NAME,COLUMN_NAME,MEANING
 6,stars,name,The name of the star.
 7,stars,discoverer,The person who discovered the star.
 8,stars,dicovery_date,The date when the star has been discovered.
-9,stars,mass_kg_10_exp_24,Mass of the body in 10^24 kilograms.
+9,stars,mass_10_exp_24_kg,Mass of the body in 10^24 kilograms.
 10,stars,gm_10_exp_6_km_exp_3_per_s_exp_2,Gravitational constant times the mass of the body in 10^6 kilometers^3 / seconds^2 (x 10^6 km^3/s^2).
 11,stars,volume_10_exp_12_km_exp_3,Volume of the body in 10^12 km^3.
 12,stars,mean_volumetric_radius_km,Radius of a sphere with the same volume as the body.
@@ -61,7 +61,7 @@ METADATA_ID,TABLE_NAME,COLUMN_NAME,MEANING
 60,planets,star_id,The ID of the star to which the planet belongs.
 61,planets,discoverer,The person who discovered the planet.
 62,planets,discovery_date,The date when the planet has been discovered.
-63,planets,mass_kg_10_exp_24,Mass of the body in 10^24 kilograms.
+63,planets,mass_10_exp_24_kg,Mass of the body in 10^24 kilograms.
 64,planets,volume_10_exp_10_km_exp_3,Volume of the body in 10^12 km^3.
 65,planets,equatorial_radius_km,Radius of the body at the equator in kilometers.
 66,planets,core_radius_km,Radius of the planet core in kilometers.

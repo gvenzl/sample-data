@@ -51,7 +51,7 @@ CREATE TABLE stars
   name                                                   VARCHAR(50)   NOT NULL, -- Name of the star
   discoverer                                             VARCHAR(100),           -- Name of the discoverer
   dicovery_date                                          DATE,                   -- Date of discovery
-  mass_kg_10_exp_24                                      REAL,                   -- Mass of the body in 10^24 kilograms
+  mass_10_exp_24_kg                                      REAL,                   -- Mass of the body in 10^24 kilograms
   gm_10_exp_6_km_exp_3_per_s_exp_2                       REAL,                   -- Gravitational constant times the mass of the body in 10^6 kilometers^3/seconds^2
   volume_10_exp_12_km_exp_3                              REAL,                   -- Volume of the body in 10^12 km^3
   mean_volumetric_radius_km                              REAL,                   -- Radius of a sphere with the same volume as the body
@@ -115,7 +115,7 @@ CREATE TABLE planets
   star_id                                                NUMERIC,                -- ID of the star the planet is orbiting
   discoverer                                             VARCHAR(100),           -- Name of the discoverer
   discovery_date                                         DATE,                   -- Date of discovery
-  mass_kg_10_exp_24                                      REAL,                   -- Mass of the body in 10^24 kilograms
+  mass_10_exp_24_kg                                      REAL,                   -- Mass of the body in 10^24 kilograms
   volume_10_exp_10_km_exp_3                              REAL,                   -- Volume of the body in 10^12 km^3
   equatorial_radius_km                                   REAL,                   -- Radius of the body at the equator in kilometers
   core_radius_km                                         REAL,                   -- Radius of the planet core in kilometers
@@ -295,7 +295,7 @@ INSERT INTO metadata
    meaning
  )
    VALUES
- (9,           'stars',    'mass_kg_10_exp_24',
+ (9,           'stars',    'mass_10_exp_24_kg',
    'Mass of the body in 10^24 kilograms.'
  );
 
@@ -783,7 +783,7 @@ INSERT INTO metadata
    meaning
  )
    VALUES
- (63,          'planets',  'mass_kg_10_exp_24',
+ (63,          'planets',  'mass_10_exp_24_kg',
    'Mass of the body in 10^24 kilograms.'
  );
 
@@ -1441,7 +1441,7 @@ INSERT INTO metadata
 /****************************************************************************************************************************/
 
 INSERT INTO stars
- (star_id, name,  discoverer, dicovery_date, mass_kg_10_exp_24, gm_10_exp_6_km_exp_3_per_s_exp_2,
+ (star_id, name,  discoverer, dicovery_date, mass_10_exp_24_kg, gm_10_exp_6_km_exp_3_per_s_exp_2,
    volume_10_exp_12_km_exp_3, mean_volumetric_radius_km, mean_density_kg_per_m_exp_3,
     gravity_m_per_s_exp_2, escape_velocity_km_per_s, ellipticity, moment_of_inertia_I_per_MR_exp_2,
      vband_magnitude, absolute_magnitude, luminosity_10_exp_24_J_per_s, mass_conversion_rate_10_exp_6_kg_per_s,
@@ -1485,7 +1485,7 @@ INSERT INTO stars
 /****************************************************************************************************************************/
 
 INSERT INTO planets
- (planet_id, name, star_id, discoverer, discovery_date, mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+ (planet_id, name, star_id, discoverer, discovery_date, mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
    polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
     length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
      max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,
@@ -1526,7 +1526,7 @@ INSERT INTO planets
  );
 
 INSERT INTO planets
- (planet_id, name, star_id, discoverer, discovery_date, mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+ (planet_id, name, star_id, discoverer, discovery_date, mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
    polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
     length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
      max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,
@@ -1567,7 +1567,7 @@ INSERT INTO planets
   );
 
 INSERT INTO planets
- (planet_id, name, star_id, discoverer, discovery_date, mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+ (planet_id, name, star_id, discoverer, discovery_date, mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
    polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
     length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
      max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,
@@ -1608,7 +1608,7 @@ INSERT INTO planets
   );
 
 INSERT INTO planets
- (planet_id, name, star_id, discoverer, discovery_date, mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+ (planet_id, name, star_id, discoverer, discovery_date, mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
    polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
     length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
      max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,
@@ -1649,7 +1649,7 @@ INSERT INTO planets
    );
 
 INSERT INTO planets
- (planet_id, name, star_id, discoverer, discovery_date, mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+ (planet_id, name, star_id, discoverer, discovery_date, mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
    polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
     length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
      max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,
@@ -1691,7 +1691,7 @@ INSERT INTO planets
  );
 
 INSERT INTO planets
- (planet_id, name, star_id, discoverer, discovery_date, mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+ (planet_id, name, star_id, discoverer, discovery_date, mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
    polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
     length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
      max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,
@@ -1732,7 +1732,7 @@ INSERT INTO planets
  );
 
 INSERT INTO planets
- (planet_id, name, star_id, discoverer,          discovery_date,         mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+ (planet_id, name, star_id, discoverer,          discovery_date,         mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
    polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
     length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
      max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,
@@ -1774,7 +1774,7 @@ INSERT INTO planets
 
 INSERT INTO planets
  (planet_id, name, star_id, discoverer,                                                                               discovery_date,
-   mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+   mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
     polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
      length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
       max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,
@@ -1817,7 +1817,7 @@ INSERT INTO planets
 
 INSERT INTO planets
  (planet_id, name, star_id, discoverer,     discovery_date,
-   mass_kg_10_exp_24, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
+   mass_10_exp_24_kg, volume_10_exp_10_km_exp_3, equatorial_radius_km, core_radius_km,
     polar_radius_km, mean_volumetric_radius_km, diameter_km, number_of_moons, has_ring_system, has_global_magnetic_field, rotation_period_hrs,
      length_of_day_hrs, ellipticity, distance_from_sun_10_exp_6_km, mean_distance_from_earth_10_exp_6_km, min_distance_from_earth_10_exp_6_km,
       max_distance_from_earth_10_exp_6_km, mean_density_kg_per_m_exp_3, gravity_m_per_s_exp_2, acceleration_m_per_s_exp_2,

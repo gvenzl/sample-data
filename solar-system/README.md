@@ -41,7 +41,7 @@ Table: stars
 | name                                                 | varchar(50)   | NO   |     | NULL    |       |
 | discoverer                                           | varchar(100)  | YES  |     | NULL    |       |
 | dicovery_date                                        | date          | YES  |     | NULL    |       |
-| mass_kg_10_exp_24                                    | real          | YES  |     | NULL    |       |
+| mass_10_exp_24_kg                                    | real          | YES  |     | NULL    |       |
 | gm_10_exp_6_km_exp_3_per_s_exp_2                     | real          | YES  |     | NULL    |       |
 | volume_10_exp_12_km_exp_3                            | real          | YES  |     | NULL    |       |
 | mean_volumetric_radius_km                            | real          | YES  |     | NULL    |       |
@@ -109,7 +109,7 @@ Table: planets
 | star_id                                       | numeric       | YES  | MUL | NULL    | Foreign key to stars.star_id |
 | discoverer                                    | varchar(100)  | YES  |     | NULL    |                              |
 | discovery_date                                | date          | YES  |     | NULL    |                              |
-| mass_kg_10_exp_24                             | real          | YES  |     | NULL    |                              |
+| mass_10_exp_24_kg                             | real          | YES  |     | NULL    |                              |
 | volume_10_exp_10_km_exp_3                     | real          | YES  |     | NULL    |                              |
 | equatorial_radius_km                          | real          | YES  |     | NULL    |                              |
 | core_radius_km                                | real          | YES  |     | NULL    |                              |
