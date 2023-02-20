@@ -1687,7 +1687,6 @@ INSERT INTO planets
                  NULL,                    NULL,                               NULL,
                   NULL,                                 NULL,
                    '{"surface_pressure":{"pressure:":">>1000","unit":"bar"},"surface_density":{"density_at_1_bar":0.16,"unit":"kg/m^3"},"scale_height":{"height":27,"unit":"km"},"average_temperature":[{"temperature_at_1_bar":165,"unit":"K"},{"temperature_at_1_bar":-108,"unit":"C"},{"temperature_at_0.1_bar":112,"unit":"K"},{"temperature_at_0.1_bar":-161,"unit":"C"}],"wind_speed":[{"speed":"150","unit":"m/s","degrees_latitude":"<30"},{"speed":"40","unit":"m/s","degrees_latitude":">30"}],"mean_molecular_weight":2.22,"composition":{"major_elements":{"unit":"percent","elements":[{"H2":89.8,"uncertainty":2},{"He":10.2,"uncertainty":2}]},"minor_elements":{"unit":"parts per million (ppm)","element":[{"CH4":3000,"uncertainty":1000},{"NH3":260,"uncertainty":40},{"HD":28,"uncertainty":10},{"C2H6":5.8,"uncertainty":1.5},{"H2O":4}]},"aerosols":["ammonia ice","water ice","ammonia hydrosulfide"]}}'
-
  );
 
 INSERT INTO planets
