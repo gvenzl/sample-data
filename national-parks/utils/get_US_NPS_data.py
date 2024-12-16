@@ -30,10 +30,14 @@ db = sql.connect("data.db")
 
 
 def sanitize_park_code(park_code: str) -> str:
-    if park_code in ("mall", "nacc"):
+    if park_code in ("mall", "nacc", "joer", "gemm"):
         return "nama"
     elif park_code == "nwwm":
         return "wwii"
+    elif park_code == "dela":
+        return "dewa"
+    elif park_code == "foca":
+        return "timu"
     else:
         return park_code
 
@@ -60,6 +64,99 @@ def get_contact_type(contact_type: str) -> int:
         return 3
     elif contact_type == "tty":
         return 4
+
+
+def convert_tags(tags: list) -> str:
+    return "|".join(tags)
+
+
+def get_park_pictures():
+    # There is a limit of 1000 API calls an hour.
+    # Looping through galleries + assets per gallery exceeds that limit.
+    # resp = requests.get(BASE_URL + "/multimedia/galleries?limit=1&api_key={}".format(API_KEY))
+    # if not resp.ok:
+    #     print(resp.text)
+    # else:
+    #     max_galleries = int(resp.json()["total"])
+    #     gallery_step = 10000
+    #     for gallery_page in range(0, max_galleries, gallery_step):
+    #         resp_gallery = requests.get(BASE_URL + "/multimedia/galleries?start={}&limit={}&api_key={}"
+    #                                    .format(gallery_page, gallery_step, API_KEY))
+    #         if not resp_gallery.ok:
+    #            print("Cannot retrieve galleries in range start: {}, limit: {}".format(gallery_page, gallery_step))
+    #            print(resp_gallery.text)
+    #         else:
+    #            for gallery in resp_gallery.json()["data"]:
+    #                gallery_id = gallery["id"]
+    resp = requests.get(BASE_URL + "/multimedia/galleries/assets?limit=1&api_key={}"
+                        .format(API_KEY))
+    if not resp.ok:
+        print("Cannot get galleries assets")
+        print(resp.text)
+    else:
+        max_assets = int(resp.json()["total"])
+        asset_step = 10000
+        for asset_page in range(0, max_assets, asset_step):
+            resp_assets = requests.get(
+                BASE_URL + "/multimedia/galleries/assets?start={}&limit={}&api_key={}"
+                .format(asset_page, asset_step, API_KEY))
+            if not resp_assets.ok:
+                print("Cannot retrieve assets in range start: {}, limit: {}"
+                      .format(asset_page, asset_step))
+                print(resp_assets.text)
+            else:
+                assets = resp_assets.json()["data"]
+                asset_binds = []
+                for asset in assets:
+                    if (asset["relatedParks"]
+                            and asset["relatedParks"][0]["parkCode"]
+                            # None of these park codes are parks but either places, subjects or locations
+                            not in ("mehi", "inau", "blac", "guge", "chbl", "cbgn", "erie",
+                                    "dabe", "fati", "cala", "esse", "armo", "mush", "auca",
+                                    "crha", "soca", "tecw", "rist")):
+                        asset_binds.append({
+                            "image_id": asset["id"],
+                            # Extract the gallery id from the permalinkUrl
+                            "gallery_id": asset["permalinkUrl"][asset["permalinkUrl"].index("gid=")+4:],
+                            "title": asset["title"],
+                            "description": asset["description"],
+                            "alt_text": asset["altText"],
+                            "permalink_url": asset["permalinkUrl"],
+                            "credit": asset["credit"],
+                            "copyright": asset["copyright"],
+                            "copyright_constraint": asset["constraintsInfo"]["constraint"],
+                            "copyright_granted_rights": asset["constraintsInfo"]["grantingRights"],
+                            "tags": convert_tags(asset["tags"]),
+                            "url": asset["fileInfo"]["url"],
+                            "file_type": asset["fileInfo"]["fileType"],
+                            "width_pixels": asset["fileInfo"]["widthPixels"],
+                            "height_pixels": asset["fileInfo"]["heightPixels"],
+                            "file_size_bytes": asset["fileInfo"]["fileSizeKb"],
+                            "park_code":
+                                sanitize_park_code(
+                                asset["relatedParks"][0]["parkCode"])
+                                if asset["relatedParks"]
+                                else ""
+                        })
+                c = db.cursor()
+                c.executemany(
+                    """INSERT INTO images_stage (image_id, gallery_id, title, description, alt_text,
+                                                 credit, copyright, copyright_constraint, permalink_url,
+                                                 copyright_granted_rights, tags, url, file_type,
+                                                 width_pixels, height_pixels, file_size_bytes, park_code)
+                                      VALUES (:image_id, :gallery_id, :title, :description, :alt_text,
+                                                 :credit, :copyright, :copyright_constraint, :permalink_url,
+                                                 :copyright_granted_rights, :tags, :url, :file_type,
+                                                 :width_pixels, :height_pixels, :file_size_bytes, :park_code)""",
+                    asset_binds)
+                c.close()
+                db.commit()
+                print("{} assets retrieved.".format(len(assets)))
+        # Insert park_id for each image based on park_code
+        c = db.cursor()
+        c.execute("UPDATE images_stage s SET park_id = (SELECT park_id FROM parks p WHERE p.park_code = s.park_code")
+        c.close()
+        db.commit()
 
 
 def get_park_activities():
@@ -167,3 +264,6 @@ if __name__ == "__main__":
 
     get_park_data()
     get_park_activities()
+    # Images will be stored in a `images_staging` table.
+    # Further cleansing of the data needs to happen as some images are duplicated in the data set.
+    get_park_pictures()
