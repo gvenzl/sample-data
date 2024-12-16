@@ -2,8 +2,8 @@
  * Encoding: UTF-8
  * Since: October, 2024
  * Author: gvenzl
- * Name: uninstall.sql
- * Description: Uninstall (drop tables) script
+ * Name: install.oracle.sql
+ * Description: Setup script for national parks for Oracle DB
  *
  * Copyright 2024 Gerald Venzl
  *
@@ -13,14 +13,9 @@
  *    https://creativecommons.org/licenses/by/4.0/
  */
 
-DROP TABLE contacts;
+-- Set DEFINE off so that '&' are ignored
+SET DEFINE OFF;
 
-DROP TABLE contact_types;
+-- Call install script
+@install.sql
 
-DROP TABLE parks_activities;
-
-DROP TABLE images;
-
-DROP TABLE parks;
-
-DROP TABLE activities;
