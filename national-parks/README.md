@@ -60,14 +60,14 @@ Contains park contact information.
 
 ```sql
 Table: contacts
-+-----------------+--------------+------+-----+---------+------------------------------+
-| Field           | Type         | Null | Key | Default | Extra                        |
-+-----------------+--------------+------+-----+---------+------------------------------+
-| contact_id      | numeric      | NO   | PRI |         |                              |
-| contact         | varchar(44)  | NO   |     |         |                              |
-| contact_type_id | numeric      | NO   |     |         |                              |
-| park_id         | varchar(36)  | NO   | FK  |         | Foreign key to parks.park_id |
-+-----------------+--------------+------+-----+---------+------------------------------+
++-----------------+--------------+------+-----+---------+----------------------------------------------+
+| Field           | Type         | Null | Key | Default | Extra                                        |
++-----------------+--------------+------+-----+---------+----------------------------------------------+
+| contact_id      | numeric      | NO   | PRI |         |                                              |
+| contact         | varchar(44)  | NO   |     |         |                                              |
+| contact_type_id | numeric      | NO   | FK  |         | Foreign key to contact_types.contact_type_id |
+| park_id         | varchar(36)  | NO   | FK  |         | Foreign key to parks.park_id                 |
++-----------------+--------------+------+-----+---------+----------------------------------------------+
 ```
 #### Field descriptions
 
