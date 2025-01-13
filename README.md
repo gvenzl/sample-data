@@ -5,6 +5,7 @@ Collections of sample data.
 | ----------------- | --------------- | ------------------------- |
 | [countries-cities-currencies](./countries-cities-currencies) | List of the world's countries, capital cities and official currencies. | <ul><li>National Geographic Atlas of the World, 11th Edition, October 2019 (ISBN-13: 978-1426220586)</li><li>[GeoNames.org](https://www.geonames.org/)</li></ul> |
 | [departments-and-employees](./departments-and-employees) | A fictional data set about a company's departments and employees. | None |
+| [national-parks](./national-parks) | A list of national parks in the United States of America. | [National Park Service Data API](https://www.nps.gov/subjects/developer/index.htm)
 | [solar-system](./solar-system) | Data about our great solar system. | [NSSDCA/NASA Planetary Fact Sheets](https://nssdc.gsfc.nasa.gov/planetary/planetfact.html) |
 
 ## License
